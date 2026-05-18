@@ -1,0 +1,2433 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Akhil Palaparthi | Founder & Web Developer</title>
+  
+  <meta name="description" content="Premium startup portfolio of Akhil Palaparthi — web developer and founder currently learning full stack development and building digital identities.">
+  <meta name="author" content="Akhil Palaparthi">
+  <meta name="theme-color" content="#0a0a14">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://palaparthi.dev">
+  <meta property="og:title" content="Akhil Palaparthi | Founder & Web Developer">
+  <meta property="og:description" content="Building premium digital identities today. Growing into digital product development tomorrow.">
+  <meta property="og:image" content="https://palaparthi.dev/static/images/og-image.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://palaparthi.dev">
+  <meta property="twitter:title" content="Akhil Palaparthi | Founder & Web Developer">
+  <meta property="twitter:description" content="Building premium digital identities today. Growing into digital product development tomorrow.">
+  <meta property="twitter:image" content="https://palaparthi.dev/static/images/og-image.png">
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Akhil Palaparthi",
+      "jobTitle": "Founder & Web Developer",
+      "url": "https://palaparthi.dev",
+      "sameAs": [
+        "https://github.com/akhilpalaparthi",
+        "https://linkedin.com/in/akhilpalaparthi"
+      ],
+      "description": "Student entrepreneur and web developer currently learning full stack development, building premium portfolio websites."
+    }
+  </script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            background: 'oklch(0.13 0.02 270)',
+            foreground: 'oklch(0.97 0.01 250)',
+            card: 'oklch(0.18 0.025 270)',
+            'card-foreground': 'oklch(0.97 0.01 250)',
+            popover: 'oklch(0.16 0.025 270)',
+            'popover-foreground': 'oklch(0.97 0.01 250)',
+            primary: 'oklch(0.68 0.22 265)',
+            'primary-foreground': 'oklch(0.1 0.02 270)',
+            secondary: 'oklch(0.22 0.03 270)',
+            'secondary-foreground': 'oklch(0.97 0.01 250)',
+            muted: 'oklch(0.22 0.025 270)',
+            'muted-foreground': 'oklch(0.7 0.03 260)',
+            accent: 'oklch(0.65 0.2 295)',
+            'accent-foreground': 'oklch(0.1 0.02 270)',
+            'neon-blue': 'oklch(0.7 0.22 250)',
+            'neon-purple': 'oklch(0.65 0.25 300)',
+            'neon-cyan': 'oklch(0.82 0.18 195)',
+          },
+          fontFamily: {
+            display: ['"Space Grotesk"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            sans: ['"Inter"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Premium Custom Styling -->
+  <style>
+    :root {
+      --radius: 0.875rem;
+      --background: oklch(0.13 0.02 270);
+      --foreground: oklch(0.97 0.01 250);
+      --card: oklch(0.18 0.025 270);
+      --card-foreground: oklch(0.97 0.01 250);
+      --popover: oklch(0.16 0.025 270);
+      --popover-foreground: oklch(0.97 0.01 250);
+      --primary: oklch(0.68 0.22 265);
+      --primary-foreground: oklch(0.1 0.02 270);
+      --secondary: oklch(0.22 0.03 270);
+      --secondary-foreground: oklch(0.97 0.01 250);
+      --muted: oklch(0.22 0.025 270);
+      --muted-foreground: oklch(0.7 0.03 260);
+      --accent: oklch(0.65 0.2 295);
+      --accent-foreground: oklch(0.1 0.02 270);
+      --border: oklch(1 0 0 / 0.08);
+      --input: oklch(1 0 0 / 0.1);
+      --ring: oklch(0.68 0.22 265);
+
+      --neon-blue: oklch(0.7 0.22 250);
+      --neon-purple: oklch(0.65 0.25 300);
+      --neon-cyan: oklch(0.82 0.18 195);
+
+      --gradient-primary: linear-gradient(135deg, oklch(0.7 0.22 250), oklch(0.65 0.25 300));
+      --gradient-accent: linear-gradient(135deg, oklch(0.82 0.18 195), oklch(0.7 0.22 250), oklch(0.65 0.25 300));
+      --gradient-radial: radial-gradient(ellipse at top, oklch(0.25 0.08 280 / 0.6), transparent 70%);
+      --shadow-glow: 0 0 60px -10px oklch(0.7 0.22 250 / 0.5);
+      --shadow-glow-purple: 0 0 80px -10px oklch(0.65 0.25 300 / 0.45);
+    }
+    
+    * { border-color: var(--border); }
+    
+    body {
+      background-color: var(--background);
+      color: var(--foreground);
+      font-family: "Inter", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4 { font-family: "Space Grotesk", sans-serif; letter-spacing: -0.02em; }
+    
+    ::selection { background: oklch(0.7 0.22 250 / 0.4); color: white; }
+
+    /* Glassmorphism Classes */
+    .glass {
+      background: color-mix(in oklab, var(--card) 50%, transparent);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid color-mix(in oklab, white 8%, transparent);
+    }
+    
+    .glass-strong {
+      background: color-mix(in oklab, var(--card) 75%, transparent);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid color-mix(in oklab, white 10%, transparent);
+    }
+    
+    .text-gradient {
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .bg-grid {
+      background-image:
+        linear-gradient(to right, oklch(1 0 0 / 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, oklch(1 0 0 / 0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    
+    .glow { box-shadow: var(--shadow-glow); }
+    .glow-purple { box-shadow: var(--shadow-glow-purple); }
+    
+    .noise-mask {
+      mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+    }
+    
+    @keyframes float-y {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    .animate-float { animation: float-y 6s ease-in-out infinite; }
+    
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .shimmer {
+      background: linear-gradient(90deg, transparent, oklch(1 0 0 / 0.15), transparent);
+      background-size: 200% 100%;
+      animation: shimmer 2.5s linear infinite;
+    }
+    
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--background); }
+    ::-webkit-scrollbar-thumb {
+      background: color-mix(in oklab, white 10%, transparent);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: color-mix(in oklab, white 20%, transparent);
+    }
+
+    /* Scroll Reveal Initial Styles */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Custom Form Input Fields */
+    .input {
+      width: 100%;
+      border-radius: 0.875rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 0.75rem 0.9rem;
+      font-size: 0.9rem;
+      color: inherit;
+      outline: none;
+      transition: border-color .2s, background .2s, box-shadow .2s;
+    }
+    .input::placeholder { color: oklch(0.65 0.03 260); }
+    .input:focus {
+      border-color: #22d3ee;
+      background: rgba(255,255,255,0.06);
+      box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.18);
+    }
+    select.input option { background: #15151f; color: #fff; }
+
+    /* Animated preloader styles */
+    #preloader {
+      background-color: #05050b;
+      transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
+    }
+
+    /* 3D Card interactive tilt container */
+    .tilt-card {
+      transform-style: preserve-3d;
+      transition: transform 0.1s ease-out, border-color 0.3s;
+    }
+    .tilt-card-inner {
+      transform: translateZ(30px);
+    }
+
+    /* Testimonials horizontal slide frame */
+    .carousel-track {
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+  </style>
+  
+  <!-- Three.js (3D orb rendering) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body class="relative min-h-screen overflow-x-hidden">
+
+  <!-- Preloader / Loading Screen Overlay -->
+  <div id="preloader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center">
+    <div class="relative flex flex-col items-center">
+      <span class="relative grid h-16 w-16 place-items-center rounded-2xl bg-gradient-to-br from-[var(--neon-blue)] to-[var(--neon-purple)] text-xl font-bold text-background shadow-[0_0_50px_oklch(0.7_0.22_250_/_0.5)]">
+        AP
+        <span class="absolute inset-0 rounded-2xl blur-lg opacity-80 bg-gradient-to-br from-[var(--neon-blue)] to-[var(--neon-purple)] -z-10 animate-pulse"></span>
+      </span>
+      <div class="mt-8 font-display text-4xl font-bold tracking-tight text-foreground" id="preloader-percent">0%</div>
+      <div class="mt-3 font-display text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Initializing Premium Digital Framework</div>
+      <div class="mt-5 w-48 h-1 overflow-hidden rounded-full bg-white/5">
+        <div id="preloader-bar" class="h-full rounded-full bg-gradient-to-r from-[var(--neon-cyan)] via-[var(--neon-blue)] to-[var(--neon-purple)] transition-[width] duration-300" style="width: 0%"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" class="fixed left-0 right-0 top-0 z-[60] h-[2px] origin-left bg-gradient-to-r from-[var(--neon-cyan)] via-[var(--neon-blue)] to-[var(--neon-purple)] scale-x-0 transition-[transform] duration-75"></div>
+
+  <!-- Custom Dual-Ring Cursor -->
+  <div id="custom-cursor" class="pointer-events-none fixed left-0 top-0 z-[70] -ml-1 -mt-1 h-2 w-2 rounded-full bg-[var(--neon-cyan)] mix-blend-difference transition-transform duration-75 ease-out scale-100 hidden sm:block"></div>
+  <div id="custom-cursor-ring" class="pointer-events-none fixed left-0 top-0 z-[69] -ml-5 -mt-5 h-10 w-10 rounded-full border border-[var(--neon-blue)]/60 backdrop-blur-[2px] transition-transform duration-300 ease-out scale-100 hidden sm:block"></div>
+
+  <!-- Interactive 2D canvas particles -->
+  <canvas id="particles-canvas" class="pointer-events-none fixed inset-0 z-0 opacity-60"></canvas>
+
+  <!-- Mouse Cursor Spotlight Overlay -->
+  <div id="spotlight" class="pointer-events-none fixed inset-0 z-[5] transition-[background] duration-200"></div>
+
+  <!-- Navbar -->
+  <header id="navbar" class="fixed inset-x-0 top-0 z-50 py-5 transition-all duration-500">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div id="nav-container" class="flex items-center justify-between rounded-full px-5 py-2.5 transition-all">
+        <a href="#top" class="group flex items-center gap-2">
+          <span class="relative grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-[var(--neon-blue)] to-[var(--neon-purple)] text-sm font-bold text-background">
+            AP
+            <span class="absolute inset-0 rounded-lg blur-md opacity-60 bg-gradient-to-br from-[var(--neon-blue)] to-[var(--neon-purple)] -z-10"></span>
+          </span>
+          <span class="hidden font-display text-sm font-semibold tracking-wide sm:inline">Akhil Palaparthi</span>
+        </a>
+        <nav class="hidden items-center gap-1 md:flex">
+          <a href="#about" class="rounded-full px-3.5 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground">About</a>
+          <a href="#skills" class="rounded-full px-3.5 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground">Skills</a>
+          <a href="#projects" class="rounded-full px-3.5 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground">Work</a>
+          <a href="#services" class="rounded-full px-3.5 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground">Services</a>
+          <a href="#pricing" class="rounded-full px-3.5 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground">Pricing</a>
+          <a href="#business" class="rounded-full px-3.5 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground">Vision</a>
+          <a href="#contact" class="rounded-full px-3.5 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground">Contact</a>
+        </nav>
+        <a href="#contact" class="hidden rounded-full bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] px-4 py-2 text-sm font-medium text-background shadow-[0_0_30px_-8px_var(--neon-blue)] transition-transform hover:scale-105 md:inline-flex">
+          Hire me
+        </a>
+        <button id="mobile-menu-btn" class="md:hidden rounded-full glass-strong p-2" aria-label="Menu">
+          <div class="space-y-1.5 p-0.5">
+            <span id="bar-1" class="block h-0.5 w-5 bg-foreground transition-transform"></span>
+            <span id="bar-2" class="block h-0.5 w-5 bg-foreground transition-opacity"></span>
+            <span id="bar-3" class="block h-0.5 w-5 bg-foreground transition-transform"></span>
+          </div>
+        </button>
+      </div>
+      
+      <!-- Mobile Navigation Drawer -->
+      <div id="mobile-drawer" class="mt-2 hidden grid gap-1 rounded-2xl glass-strong p-3 md:hidden animate-fade-in">
+        <a href="#about" class="mobile-nav-link rounded-xl px-4 py-3 text-sm hover:bg-white/5">About</a>
+        <a href="#skills" class="mobile-nav-link rounded-xl px-4 py-3 text-sm hover:bg-white/5">Skills</a>
+        <a href="#projects" class="mobile-nav-link rounded-xl px-4 py-3 text-sm hover:bg-white/5">Work</a>
+        <a href="#services" class="mobile-nav-link rounded-xl px-4 py-3 text-sm hover:bg-white/5">Services</a>
+        <a href="#pricing" class="mobile-nav-link rounded-xl px-4 py-3 text-sm hover:bg-white/5">Pricing</a>
+        <a href="#business" class="mobile-nav-link rounded-xl px-4 py-3 text-sm hover:bg-white/5">Vision</a>
+        <a href="#contact" class="mobile-nav-link rounded-xl px-4 py-3 text-sm hover:bg-white/5">Contact</a>
+        <a href="#contact" class="mobile-nav-link mt-1 block rounded-xl bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] px-4 py-3 text-center text-sm font-medium text-background">
+          Hire me
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Section Wrapper -->
+  <main class="relative z-10">
+
+    <!-- Hero Section -->
+    <section id="top" class="relative min-h-[100svh] w-full overflow-hidden flex items-center">
+      <div class="absolute inset-0 bg-grid noise-mask opacity-50"></div>
+      <div class="absolute inset-0" style="background: var(--gradient-radial)"></div>
+      <div class="pointer-events-none absolute -left-40 top-40 h-[420px] w-[420px] rounded-full bg-[var(--neon-blue)] opacity-20 blur-[140px]"></div>
+      <div class="pointer-events-none absolute -right-40 bottom-20 h-[460px] w-[460px] rounded-full bg-[var(--neon-purple)] opacity-20 blur-[160px]"></div>
+
+      <!-- 3D Orbit Scene Container -->
+      <div class="absolute inset-0 z-10 pointer-events-none">
+        <canvas id="scene-3d-canvas" class="w-full h-full block"></canvas>
+      </div>
+
+      <div class="relative z-20 mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col items-start justify-center px-5 pt-32 pb-20 sm:px-8">
+        
+        <!-- Premium Founder Badge -->
+        <div class="reveal mb-6 inline-flex items-center gap-2 rounded-full glass border border-[var(--neon-cyan)]/30 px-3.5 py-1.5 text-xs font-semibold text-[var(--neon-cyan)] shadow-[0_0_15px_oklch(0.82_0.18_195_/_0.2)]">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--neon-cyan)] opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-[var(--neon-cyan)]"></span>
+          </span>
+          Available for selective collaborations
+        </div>
+
+        <h1 class="reveal font-display text-[clamp(2.6rem,8vw,6.5rem)] font-bold leading-[0.95] tracking-tight">
+          Akhil <span class="text-gradient">Palaparthi</span>
+        </h1>
+
+        <p class="reveal mt-5 max-w-2xl text-lg text-muted-foreground sm:text-xl">
+          <span class="text-foreground/90 font-medium">Founder</span>
+          <span class="mx-2 text-[var(--neon-cyan)]">·</span>
+          <span class="text-foreground/90 font-medium">Web Developer</span>
+          <span class="mx-2 text-[var(--neon-cyan)]">·</span>
+          <span class="text-foreground/90 font-medium">Learning Full Stack Development</span>
+        </p>
+
+        <p class="reveal mt-6 max-w-xl text-base text-muted-foreground leading-relaxed">
+          Building premium digital identities today. Growing into digital product development tomorrow.
+        </p>
+
+        <div class="reveal mt-10 flex flex-wrap items-center gap-4">
+          <a href="#projects" class="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] px-6 py-3 text-sm font-semibold text-background shadow-[0_0_50px_-12px_var(--neon-purple)] transition-all hover:scale-[1.03] active:scale-[0.98]">
+            View Projects
+            <i data-lucide="arrow-up-right" class="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+          </a>
+          <a href="#contact" class="inline-flex items-center gap-2 rounded-full glass-strong px-6 py-3 text-sm font-semibold hover:bg-white/10 hover:border-cyan-400/40 transition-all">
+            Contact Us
+          </a>
+          <a href="#services" class="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-muted-foreground hover:text-foreground">
+            Explore Services →
+          </a>
+        </div>
+
+        <!-- Scroll Down Line -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-xs uppercase tracking-[0.3em] text-muted-foreground opacity-60 flex flex-col items-center gap-2">
+          <span>Scroll</span>
+          <span class="h-8 w-px bg-gradient-to-b from-[var(--neon-cyan)] to-transparent"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="relative py-32">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="grid gap-16 lg:grid-cols-[1fr_1.2fr]">
+          <div class="reveal">
+            <!-- Section Label -->
+            <div class="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+              <span class="h-1.5 w-1.5 rounded-full bg-[var(--neon-cyan)] shadow-[0_0_10px_var(--neon-cyan)]"></span>
+              01 — Founder Story
+            </div>
+            <h2 class="mt-5 font-display text-4xl font-bold tracking-tight sm:text-5xl">
+              A student entrepreneur building honest <span class="text-gradient">digital presence</span>.
+            </h2>
+            <p class="mt-6 text-base text-muted-foreground sm:text-lg leading-relaxed">
+              I am Akhil Palaparthi, a student entrepreneur and web developer currently learning full stack development. I started by building portfolio websites because I noticed students and professionals often lacked strong digital presence.
+            </p>
+            <p class="mt-4 text-base text-muted-foreground sm:text-lg leading-relaxed">
+              This startup is our first step toward building meaningful digital products. We are currently focused on premium portfolio website development while learning and expanding our technical capabilities.
+            </p>
+          </div>
+
+          <!-- Pillars / Custom Counters -->
+          <div class="flex flex-col justify-between gap-8">
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="reveal group relative overflow-hidden rounded-2xl glass p-6 transition-all hover:-translate-y-1 hover:border-[var(--neon-blue)]/40">
+                <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[var(--neon-purple)]/10 blur-3xl transition-opacity group-hover:opacity-100 opacity-60"></div>
+                <i data-lucide="book-open" class="h-7 w-7 text-[var(--neon-cyan)]"></i>
+                <h3 class="mt-4 font-display text-lg font-semibold">Continuous Learning</h3>
+                <p class="mt-2 text-sm text-muted-foreground">Actively studying backend fundamentals, Python, Django, and modern full-stack developer ecosystems.</p>
+              </div>
+
+              <div class="reveal group relative overflow-hidden rounded-2xl glass p-6 transition-all hover:-translate-y-1 hover:border-[var(--neon-blue)]/40">
+                <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[var(--neon-purple)]/10 blur-3xl transition-opacity group-hover:opacity-100 opacity-60"></div>
+                <i data-lucide="help-circle" class="h-7 w-7 text-[var(--neon-cyan)]"></i>
+                <h3 class="mt-4 font-display text-lg font-semibold">Client First</h3>
+                <p class="mt-2 text-sm text-muted-foreground">Focusing on clear communication, understanding student/professional needs, and reliable support.</p>
+              </div>
+            </div>
+
+            <!-- Dynamic Counters Container -->
+            <div class="grid gap-4 grid-cols-2 sm:grid-cols-4 w-full">
+              <div class="reveal glass p-5 rounded-2xl text-center group hover:border-[var(--neon-cyan)]/30 transition-all">
+                <div class="font-display text-3xl sm:text-4xl font-extrabold text-gradient" data-target="4">0</div>
+                <div class="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider mt-2">Learning Tech</div>
+              </div>
+              <div class="reveal glass p-5 rounded-2xl text-center group hover:border-[var(--neon-cyan)]/30 transition-all">
+                <div class="font-display text-3xl sm:text-4xl font-extrabold text-gradient" data-target="3">0</div>
+                <div class="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider mt-2">Team Members</div>
+              </div>
+              <div class="reveal glass p-5 rounded-2xl text-center group hover:border-[var(--neon-cyan)]/30 transition-all">
+                <div class="font-display text-3xl sm:text-4xl font-extrabold text-gradient" data-target="5">0</div>
+                <div class="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider mt-2">Portfolios Built</div>
+              </div>
+              <div class="reveal glass p-5 rounded-2xl text-center group hover:border-[var(--neon-cyan)]/30 transition-all">
+                <div class="font-display text-3xl sm:text-4xl font-extrabold text-gradient" data-target="100">0</div>
+                <div class="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider mt-2">Growth %</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Real Team Sub-Section */}
+        <div class="mt-24 pt-16 border-t border-white/5">
+          <div class="reveal">
+            <div class="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+              <i data-lucide="users" class="h-3 w-3 text-[var(--neon-cyan)] animate-pulse"></i>
+              01.2 — Our Team
+            </div>
+            <h3 class="mt-5 font-display text-3xl font-bold tracking-tight">
+              Small team. <span class="text-gradient">Relentless focus</span>.
+            </h3>
+            <p class="mt-3 max-w-2xl text-sm text-muted-foreground leading-relaxed">
+              We operate as a compact 3-person team dedicated to launching high-end portfolio websites without any fake corporate layers.
+            </p>
+          </div>
+
+          <div class="mt-10 grid gap-6 sm:grid-cols-3">
+            <div class="reveal group relative h-full overflow-hidden rounded-2xl glass p-6 transition-all hover:border-[var(--neon-blue)]/30">
+              <div class="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[var(--neon-blue)]/5 blur-2xl"></div>
+              <div class="font-display text-xs font-semibold text-[var(--neon-cyan)] uppercase tracking-wider">
+                Founder / Development
+              </div>
+              <h4 class="mt-2 font-display text-xl font-bold tracking-tight text-foreground">
+                Akhil Palaparthi
+              </h4>
+              <p class="mt-3 text-xs leading-relaxed text-muted-foreground">
+                Building frontend designs, setting up configurations, and learning backend web technologies.
+              </p>
+            </div>
+
+            <div class="reveal group relative h-full overflow-hidden rounded-2xl glass p-6 transition-all hover:border-[var(--neon-blue)]/30">
+              <div class="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[var(--neon-blue)]/5 blur-2xl"></div>
+              <div class="font-display text-xs font-semibold text-[var(--neon-cyan)] uppercase tracking-wider">
+                Client Care & Operations
+              </div>
+              <h4 class="mt-2 font-display text-xl font-bold tracking-tight text-foreground">
+                Client Communication
+              </h4>
+              <p class="mt-3 text-xs leading-relaxed text-muted-foreground">
+                Managing conversations, detailing client requirements, and coordinating project updates.
+              </p>
+            </div>
+
+            <div class="reveal group relative h-full overflow-hidden rounded-2xl glass p-6 transition-all hover:border-[var(--neon-blue)]/30">
+              <div class="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[var(--neon-blue)]/5 blur-2xl"></div>
+              <div class="font-display text-xs font-semibold text-[var(--neon-cyan)] uppercase tracking-wider">
+                Coordination Support
+              </div>
+              <h4 class="mt-2 font-display text-xl font-bold tracking-tight text-foreground">
+                Operations Support
+              </h4>
+              <p class="mt-3 text-xs leading-relaxed text-muted-foreground">
+                Helping with project execution schedules, domain checks, and manual deployment support.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Selected Work Section -->
+    <section id="projects" class="relative py-32">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="reveal">
+          <div class="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+            <span class="h-1.5 w-1.5 rounded-full bg-[var(--neon-cyan)] shadow-[0_0_10px_var(--neon-cyan)]"></span>
+            02 — Selected Work
+          </div>
+          <div class="mt-5 flex flex-wrap items-end justify-between gap-6">
+            <h2 class="font-display text-4xl font-bold tracking-tight sm:text-5xl">
+              High-Performance <span class="text-gradient">Digital Products</span>.
+            </h2>
+            <a href="#contact" class="text-sm text-muted-foreground hover:text-foreground">Request custom solution →</a>
+          </div>
+        </div>
+
+        <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Project 1 -->
+    <!-- Selected Work Section -->
+    <section id="projects" class="relative py-32">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="reveal">
+          <div class="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+            <span class="h-1.5 w-1.5 rounded-full bg-[var(--neon-cyan)] shadow-[0_0_10px_var(--neon-cyan)]"></span>
+            02 — Selected Projects
+          </div>
+          <div class="mt-5 flex flex-wrap items-end justify-between gap-6">
+            <h2 class="font-display text-4xl font-bold tracking-tight sm:text-5xl">
+              Projects built with <span class="text-gradient">craft & clarity</span>.
+            </h2>
+            <a href="#contact" class="text-sm text-muted-foreground hover:text-foreground">Have a portfolio design in mind? →</a>
+          </div>
+        </div>
+
+        <div class="mt-14 grid gap-6 md:grid-cols-2">
+          <!-- Project 1 -->
+          <article class="reveal tilt-card group relative h-full flex flex-col justify-between overflow-hidden rounded-3xl glass p-6 transition-all hover:border-[var(--neon-blue)]/30">
+            <div>
+              <div class="flex items-center justify-between gap-2 flex-wrap">
+                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-muted-foreground font-semibold flex items-center gap-1.5">
+                  <i data-lucide="alert-triangle" class="h-3 w-3 text-yellow-400"></i> Learning project / not deployed
+                </span>
+                <span class="font-display text-sm font-semibold text-muted-foreground/60">01</span>
+              </div>
+              <h3 class="mt-5 font-display text-2xl font-bold tracking-tight">Personal AI Assistant</h3>
+              <p class="mt-2.5 text-sm text-muted-foreground leading-relaxed">A personal AI assistant experiment built while learning automation and intelligent workflows. Focuses on local script routines.</p>
+            </div>
+            <div>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-muted-foreground">Python</span>
+                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-muted-foreground">Automation</span>
+                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-muted-foreground">Intelligent Workflows</span>
+              </div>
+              <div class="mt-6 pt-5 border-t border-white/5 flex items-center gap-3">
+                <a href="#contact" class="inline-flex items-center gap-1.5 rounded-xl bg-white/5 px-4 py-2.5 text-xs font-semibold hover:bg-white/10 transition-colors">
+                  <i data-lucide="code" class="h-3.5 w-3.5"></i> Inquire Details
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="reveal tilt-card group relative h-full flex flex-col justify-between overflow-hidden rounded-3xl glass p-6 transition-all hover:border-[var(--neon-blue)]/30">
+            <div>
+              <div class="flex items-center justify-between gap-2 flex-wrap">
+                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-muted-foreground font-semibold flex items-center gap-1.5">
+                  <i data-lucide="check-circle" class="h-3 w-3 text-emerald-400"></i> Deployed & Active
+                </span>
+                <span class="font-display text-sm font-semibold text-muted-foreground/60">02</span>
+              </div>
+              <h3 class="mt-5 font-display text-2xl font-bold tracking-tight">Portfolio Website Projects</h3>
+              <p class="mt-2.5 text-sm text-muted-foreground leading-relaxed">Portfolio websites created for students, fresh graduates, and working professionals to establish a design-grade digital presence.</p>
+            </div>
+            <div>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-muted-foreground">HTML</span>
+                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-muted-foreground">Tailwind CSS</span>
+                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-muted-foreground">Premium Design</span>
+              </div>
+              <div class="mt-6 pt-5 border-t border-white/5 flex items-center gap-3">
+                <a href="#contact" class="inline-flex items-center gap-1.5 rounded-xl bg-white/5 px-4 py-2.5 text-xs font-semibold hover:bg-white/10 transition-colors">
+                  <i data-lucide="code" class="h-3.5 w-3.5"></i> Inquire Details
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="reveal tilt-card group relative h-full flex flex-col justify-between overflow-hidden rounded-3xl glass p-6 transition-all hover:border-[var(--neon-blue)]/30">
+            <div>
+              <div class="flex items-center justify-between gap-2 flex-wrap">
+                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-muted-foreground font-semibold flex items-center gap-1.5">
+                  <i data-lucide="alert-triangle" class="h-3 w-3 text-yellow-400"></i> Learning project / local testbeds
+                </span>
+                <span class="font-display text-sm font-semibold text-muted-foreground/60">03</span>
+              </div>
+              <h3 class="mt-5 font-display text-2xl font-bold tracking-tight">Django Learning Projects</h3>
+              <p class="mt-2.5 text-sm text-muted-foreground leading-relaxed">Small backend learning projects built while improving web development, template rendering, and database fundamentals.</p>
+            </div>
+            <div>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-muted-foreground">Python</span>
+                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-muted-foreground">Django</span>
+                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-muted-foreground">SQLite</span>
+              </div>
+              <div class="mt-6 pt-5 border-t border-white/5 flex items-center gap-3">
+                <a href="#contact" class="inline-flex items-center gap-1.5 rounded-xl bg-white/5 px-4 py-2.5 text-xs font-semibold hover:bg-white/10 transition-colors">
+                  <i data-lucide="code" class="h-3.5 w-3.5"></i> Inquire Details
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="reveal tilt-card group relative h-full flex flex-col justify-between overflow-hidden rounded-3xl glass p-6 transition-all hover:border-[var(--neon-blue)]/30">
+            <div>
+              <div class="flex items-center justify-between gap-2 flex-wrap">
+                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-muted-foreground font-semibold flex items-center gap-1.5">
+                  <i data-lucide="check-circle" class="h-3 w-3 text-emerald-400"></i> Deployed & Active
+                </span>
+                <span class="font-display text-sm font-semibold text-muted-foreground/60">04</span>
+              </div>
+              <h3 class="mt-5 font-display text-2xl font-bold tracking-tight">This Business Portfolio Website</h3>
+              <p class="mt-2.5 text-sm text-muted-foreground leading-relaxed">Our startup's own business portfolio website, built to showcase frontend design craft, responsive UI layouts, and interactive experiences.</p>
+            </div>
+            <div>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-muted-foreground">React</span>
+                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-muted-foreground">TypeScript</span>
+                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-muted-foreground">Tailwind CSS</span>
+                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-muted-foreground">Three.js</span>
+              </div>
+              <div class="mt-6 pt-5 border-t border-white/5 flex items-center gap-3">
+                <a href="#contact" class="inline-flex items-center gap-1.5 rounded-xl bg-white/5 px-4 py-2.5 text-xs font-semibold hover:bg-white/10 transition-colors">
+                  <i data-lucide="code" class="h-3.5 w-3.5"></i> Inquire Details
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="relative py-32">
+      <div class="absolute inset-0 -z-10" style="background: var(--gradient-radial)"></div>
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-end">
+          <div class="reveal">
+            <div class="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+              <span class="h-1.5 w-1.5 rounded-full bg-[var(--neon-cyan)] shadow-[0_0_10px_var(--neon-cyan)]"></span>
+              04 — Services
+            </div>
+            <h2 class="mt-5 font-display text-4xl font-bold tracking-tight sm:text-5xl">
+              Three ways we can <span class="text-gradient">collaborate</span>.
+            </h2>
+          </div>
+          <div class="reveal">
+            <p class="text-muted-foreground sm:text-lg leading-relaxed">
+              I operate a focused digital startup helper. High-end visual taste, clean layouts, and personalized attention — engineered to give your digital brand a premium edge.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-14 grid gap-6 md:grid-cols-3">
+          <!-- Service 1 -->
+          <div class="reveal group relative h-full flex flex-col justify-between overflow-hidden rounded-3xl glass p-7 transition-all hover:border-[var(--neon-blue)]/40">
+            <div>
+              <div class="flex items-start justify-between gap-2 flex-wrap">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--neon-blue)] to-[var(--neon-purple)] text-background shadow-[0_0_20px_oklch(0.7_0.22_250_/_0.3)]">
+                  <i data-lucide="graduation-cap" class="h-6 w-6"></i>
+                </div>
+                <span class="rounded-full border border-[var(--neon-cyan)]/40 bg-[var(--neon-cyan)]/10 px-2.5 py-1 text-[10px] uppercase tracking-wider text-[var(--neon-cyan)] font-semibold shadow-[0_0_10px_rgba(34,211,238,0.15)]">
+                  Best for Students
+                </span>
+              </div>
+              <h3 class="mt-5 font-display text-2xl font-bold">Premium Portfolios</h3>
+              <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Affordable, premium personal websites designed specifically for students and fresh graduates to make a stellar first impression.</p>
+            </div>
+            <div>
+              <ul class="mt-5 space-y-2 text-sm text-foreground/80 border-t border-white/5 pt-5">
+                <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[var(--neon-cyan)]"></span> Custom Glassmorphic layouts</li>
+                <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[var(--neon-cyan)]"></span> Fully responsive design</li>
+                <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[var(--neon-cyan)]"></span> Basic SEO implementation</li>
+              </ul>
+              <a href="#contact" class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--neon-cyan)]">
+                Start a project <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="reveal group relative h-full flex flex-col justify-between overflow-hidden rounded-3xl glass p-7 transition-all hover:border-[var(--neon-blue)]/40">
+            <div>
+              <div class="flex items-start justify-between gap-2 flex-wrap">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--neon-blue)] to-[var(--neon-purple)] text-background shadow-[0_0_20px_oklch(0.7_0.22_250_/_0.3)]">
+                  <i data-lucide="briefcase" class="h-6 w-6"></i>
+                </div>
+              </div>
+              <h3 class="mt-5 font-display text-2xl font-bold">Personal Branding</h3>
+              <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Modern and premium portfolio presence for developers, designers, writers, and working professionals building their digital authority.</p>
+            </div>
+            <div>
+              <ul class="mt-5 space-y-2 text-sm text-foreground/80 border-t border-white/5 pt-5">
+                <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[var(--neon-cyan)]"></span> Custom layouts & pages</li>
+                <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[var(--neon-cyan)]"></span> Sleek typography & colors</li>
+                <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[var(--neon-cyan)]"></span> Showcase work elegantly</li>
+              </ul>
+              <a href="#contact" class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--neon-cyan)]">
+                Start a project <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="reveal group relative h-full flex flex-col justify-between overflow-hidden rounded-3xl glass p-7 transition-all hover:border-[var(--neon-blue)]/40">
+            <div>
+              <div class="flex items-start justify-between gap-2 flex-wrap">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--neon-blue)] to-[var(--neon-purple)] text-background shadow-[0_0_20px_oklch(0.7_0.22_250_/_0.3)]">
+                  <i data-lucide="refresh-cw" class="h-6 w-6"></i>
+                </div>
+              </div>
+              <h3 class="mt-5 font-display text-2xl font-bold">Portfolio Redesign</h3>
+              <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Upgrading existing websites with responsive architecture, fluid custom styling, premium animations, and performance fine-tuning.</p>
+            </div>
+            <div>
+              <ul class="mt-5 space-y-2 text-sm text-foreground/80 border-t border-white/5 pt-5">
+                <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[var(--neon-cyan)]"></span> Visual system overhaul</li>
+                <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[var(--neon-cyan)]"></span> Micro-interaction cleanup</li>
+                <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[var(--neon-cyan)]"></span> Performance & speed audit</li>
+              </ul>
+              <a href="#contact" class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--neon-cyan)]">
+                Start a project <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Premium CTA banner inside services -->
+        <div class="reveal mt-12 overflow-hidden rounded-3xl glass border border-[var(--neon-blue)]/30 p-8 sm:p-10 relative">
+          <div class="absolute -right-20 -bottom-20 h-64 w-64 rounded-full bg-gradient-to-br from-[var(--neon-blue)]/30 to-[var(--neon-purple)]/30 blur-3xl"></div>
+          <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div>
+              <h3 class="font-display text-2xl font-bold">Let's build together</h3>
+              <p class="text-sm text-muted-foreground mt-2 max-w-xl">Whether you need a sleek personal portfolio, a custom branding presence, or a visual portfolio redesign, we are ready to build it.</p>
+            </div>
+            <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] px-6 py-3 text-sm font-semibold text-background shadow-[0_0_30px_rgba(124,92,255,0.4)] hover:scale-[1.03] transition-all">
+              Start a Project
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="relative py-32 border-t border-white/5 overflow-hidden">
+      <div class="absolute inset-0 -z-10" style="background: var(--gradient-radial)"></div>
+      <div class="absolute left-1/3 top-1/4 -z-10 h-72 w-72 rounded-full bg-[var(--neon-purple)]/10 blur-[100px]"></div>
+      <div class="absolute right-1/4 top-1/2 -z-10 h-72 w-72 rounded-full bg-[var(--neon-cyan)]/10 blur-[100px]"></div>
+
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-end">
+          <div class="reveal">
+            <div class="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+              <span class="h-1.5 w-1.5 rounded-full bg-[var(--neon-cyan)] shadow-[0_0_10px_var(--neon-cyan)]"></span>
+              04 — Pricing
+            </div>
+            <h2 class="mt-5 font-display text-4xl font-bold tracking-tight sm:text-5xl">
+              Flexible Plans for <span class="text-gradient">Every Stage</span>.
+            </h2>
+          </div>
+          <div class="reveal">
+            <p class="text-muted-foreground sm:text-lg leading-relaxed">
+              Affordable premium portfolio solutions designed for students, professionals, and growing personal brands. Pick an option that fits your current setup.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pricing Cards Grid -->
+        <div class="mt-14 grid gap-8 lg:grid-cols-3 items-stretch">
+          
+          <!-- Card 1: Student Plan (Highlighted/Featured with Cyan Border) -->
+          <div class="reveal group relative h-full flex flex-col justify-between overflow-hidden rounded-3xl border-2 border-[var(--neon-cyan)]/30 bg-black/40 backdrop-blur-md p-8 transition-all duration-300 hover:-translate-y-2 hover:border-[var(--neon-cyan)]/60 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]">
+            <div class="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-[var(--neon-cyan)]/10 blur-3xl transition-opacity group-hover:bg-[var(--neon-cyan)]/15"></div>
+            
+            <div>
+              <div class="flex items-center justify-between gap-2">
+                <span class="rounded-full border border-[var(--neon-cyan)]/40 bg-[var(--neon-cyan)]/10 px-3 py-1 text-[10px] uppercase tracking-wider text-[var(--neon-cyan)] font-semibold shadow-[0_0_12px_rgba(34,211,238,0.1)]">
+                  Best for Students
+                </span>
+                <span id="student-badge" class="rounded-full bg-[var(--neon-blue)] px-2.5 py-0.5 text-[9px] uppercase tracking-wider text-background font-bold">
+                  Most Popular
+                </span>
+              </div>
+
+              <h3 class="mt-5 font-display text-3xl font-bold tracking-tight flex items-center gap-2">
+                🎓 Student Plan
+              </h3>
+              <p class="mt-3 text-sm text-muted-foreground leading-relaxed">
+                Affordable premium portfolio websites for students and fresh graduates building their digital identity.
+              </p>
+
+              <!-- Option Selector Toggles -->
+              <div class="mt-6 p-1 rounded-xl bg-white/5 border border-white/5 grid grid-cols-2 gap-1 text-[11px] font-semibold">
+                <button type="button" onclick="setStudentPlan(0)" id="btn-student-0" class="plan-toggle-student py-2 px-1 rounded-lg transition-all text-center bg-[var(--neon-cyan)]/20 border border-[var(--neon-cyan)]/30 text-[var(--neon-cyan)] shadow-sm">
+                  Hosted Plan
+                </button>
+                <button type="button" onclick="setStudentPlan(1)" id="btn-student-1" class="plan-toggle-student py-2 px-1 rounded-lg transition-all text-center text-muted-foreground hover:bg-white/5 hover:text-foreground border border-transparent">
+                  2-Year Hosted
+                </button>
+                <button type="button" onclick="setStudentPlan(2)" id="btn-student-2" class="plan-toggle-student py-2 px-1 rounded-lg transition-all text-center text-muted-foreground hover:bg-white/5 hover:text-foreground border border-transparent">
+                  Source Code
+                </button>
+                <button type="button" onclick="setStudentPlan(3)" id="btn-student-3" class="plan-toggle-student py-2 px-1 rounded-lg transition-all text-center text-muted-foreground hover:bg-white/5 hover:text-foreground border border-transparent">
+                  Full Ownership
+                </button>
+              </div>
+
+              <!-- Price Display -->
+              <div class="mt-7 flex items-baseline gap-2">
+                <span id="student-price" class="font-display text-5xl font-extrabold tracking-tight text-foreground transition-all duration-300">
+                  ₹699
+                </span>
+                <span class="text-sm text-muted-foreground">one-time</span>
+              </div>
+
+              <!-- Features List -->
+              <ul id="student-features" class="mt-8 space-y-3.5">
+                <!-- Dynamically populated -->
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-white/5 flex flex-col gap-3">
+              <a href="#contact" class="w-full text-center rounded-xl bg-gradient-to-r from-[var(--neon-cyan)] to-[var(--neon-blue)] py-3.5 text-xs font-bold text-background shadow-[0_0_20px_rgba(34,211,238,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all">
+                Choose Plan
+              </a>
+              <a href="#contact" class="w-full text-center rounded-xl border border-white/10 bg-white/5 py-3.5 text-xs font-bold text-foreground hover:bg-white/10 transition-colors">
+                Contact Us
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: Professional Plan -->
+          <div class="reveal group relative h-full flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-300 hover:-translate-y-2 hover:border-[var(--neon-blue)]/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.1)]">
+            <div class="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-[var(--neon-blue)]/10 blur-3xl transition-opacity group-hover:bg-[var(--neon-blue)]/15"></div>
+            
+            <div>
+              <div class="flex items-center justify-between gap-2">
+                <span class="rounded-full border border-[var(--neon-blue)]/30 bg-[var(--neon-blue)]/10 px-3 py-1 text-[10px] uppercase tracking-wider text-[var(--neon-blue)] font-semibold">
+                  Best for Professionals
+                </span>
+                <span id="prof-badge" class="rounded-full bg-[var(--neon-purple)] px-2.5 py-0.5 text-[9px] uppercase tracking-wider text-background font-bold">
+                  Most Popular
+                </span>
+              </div>
+
+              <h3 class="mt-5 font-display text-3xl font-bold tracking-tight flex items-center gap-2">
+                💼 Professional Plan
+              </h3>
+              <p class="mt-3 text-sm text-muted-foreground leading-relaxed">
+                Premium personal branding portfolios for freelancers, developers, designers, and startup founders.
+              </p>
+
+              <!-- Option Selector Toggles -->
+              <div class="mt-6 p-1 rounded-xl bg-white/5 border border-white/5 grid grid-cols-2 gap-1 text-[11px] font-semibold">
+                <button type="button" onclick="setProfPlan(0)" id="btn-prof-0" class="plan-toggle-prof py-2 px-1 rounded-lg transition-all text-center bg-[var(--neon-blue)]/20 border border-[var(--neon-blue)]/30 text-[var(--neon-blue)] shadow-sm">
+                  Hosted Plan
+                </button>
+                <button type="button" onclick="setProfPlan(1)" id="btn-prof-1" class="plan-toggle-prof py-2 px-1 rounded-lg transition-all text-center text-muted-foreground hover:bg-white/5 hover:text-foreground border border-transparent">
+                  2-Year Hosted
+                </button>
+                <button type="button" onclick="setProfPlan(2)" id="btn-prof-2" class="plan-toggle-prof py-2 px-1 rounded-lg transition-all text-center text-muted-foreground hover:bg-white/5 hover:text-foreground border border-transparent">
+                  Source Code
+                </button>
+                <button type="button" onclick="setProfPlan(3)" id="btn-prof-3" class="plan-toggle-prof py-2 px-1 rounded-lg transition-all text-center text-muted-foreground hover:bg-white/5 hover:text-foreground border border-transparent">
+                  Full Ownership
+                </button>
+              </div>
+
+              <!-- Price Display -->
+              <div class="mt-7 flex items-baseline gap-2">
+                <span id="prof-price" class="font-display text-5xl font-extrabold tracking-tight text-foreground transition-all duration-300">
+                  ₹1499
+                </span>
+                <span class="text-sm text-muted-foreground">one-time</span>
+              </div>
+
+              <!-- Features List -->
+              <ul id="prof-features" class="mt-8 space-y-3.5">
+                <!-- Dynamically populated -->
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-white/5 flex flex-col gap-3">
+              <a href="#contact" class="w-full text-center rounded-xl bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] py-3.5 text-xs font-bold text-background shadow-[0_0_20px_rgba(124,92,255,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all">
+                Choose Plan
+              </a>
+              <a href="#contact" class="w-full text-center rounded-xl border border-white/10 bg-white/5 py-3.5 text-xs font-bold text-foreground hover:bg-white/10 transition-colors">
+                Contact Us
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: Custom Plan -->
+          <div class="reveal group relative h-full flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-300 hover:-translate-y-2 hover:border-[var(--neon-purple)]/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.1)]">
+            <div class="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-[var(--neon-purple)]/10 blur-3xl transition-opacity group-hover:bg-[var(--neon-purple)]/15"></div>
+            
+            <div>
+              <div class="flex items-center justify-between gap-2">
+                <span class="rounded-full border border-[var(--neon-purple)]/30 bg-[var(--neon-purple)]/10 px-3 py-1 text-[10px] uppercase tracking-wider text-[var(--neon-purple)] font-semibold">
+                  Flexible Solution
+                </span>
+              </div>
+
+              <h3 class="mt-5 font-display text-3xl font-bold tracking-tight flex items-center gap-2">
+                🚀 Custom Plan
+              </h3>
+              <p class="mt-3 text-sm text-muted-foreground leading-relaxed">
+                For unique portfolio concepts, multi-page business frameworks, and advanced developer branding.
+              </p>
+
+              <!-- Price Display -->
+              <div class="mt-14 flex items-baseline gap-2">
+                <span class="font-display text-4xl font-extrabold tracking-tight text-foreground">
+                  ₹2500+
+                </span>
+                <span class="text-sm text-muted-foreground">starting from</span>
+              </div>
+
+              <!-- Bullet Points -->
+              <ul class="mt-8 space-y-3.5">
+                <li class="flex items-start gap-3 text-sm leading-relaxed text-foreground/90">
+                  <i data-lucide="check" class="mt-0.5 h-4.5 w-4.5 shrink-0 text-[var(--neon-purple)]"></i>
+                  <span>Multi-page premium portfolios</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm leading-relaxed text-foreground/90">
+                  <i data-lucide="check" class="mt-0.5 h-4.5 w-4.5 shrink-0 text-[var(--neon-purple)]"></i>
+                  <span>Highly unique custom design requests</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm leading-relaxed text-foreground/90">
+                  <i data-lucide="check" class="mt-0.5 h-4.5 w-4.5 shrink-0 text-[var(--neon-purple)]"></i>
+                  <span>Advanced digital dashboard solutions</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm leading-relaxed text-foreground/90">
+                  <i data-lucide="check" class="mt-0.5 h-4.5 w-4.5 shrink-0 text-[var(--neon-purple)]"></i>
+                  <span>Hosted / Source Code / Full Ownership options</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-white/5 flex flex-col gap-3">
+              <a href="#contact" class="w-full text-center rounded-xl bg-white text-background py-3.5 text-xs font-bold shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:scale-[1.02] active:scale-[0.98] transition-all">
+                Contact Us
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Optional Add-Ons glass container -->
+        <div class="reveal mt-12 overflow-hidden rounded-3xl border border-white/10 bg-white/3 backdrop-blur-lg p-6 sm:p-8 transition-colors hover:border-[var(--neon-blue)]/30">
+          <div class="absolute -left-10 -bottom-10 -z-10 h-32 w-32 rounded-full bg-[var(--neon-cyan)]/10 blur-2xl"></div>
+          
+          <h4 class="font-display text-xl font-bold tracking-tight flex items-center gap-2">
+            <i data-lucide="sparkles" class="h-5 w-5 text-[var(--neon-cyan)]"></i> Optional Add-Ons
+          </h4>
+          
+          <div class="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+            <div class="rounded-2xl bg-white/5 border border-white/5 p-4 flex flex-col justify-between gap-3 group hover:bg-white/8 transition-colors">
+              <span class="text-xs text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
+                Custom domain setup
+              </span>
+              <span class="font-display text-sm font-semibold text-[var(--neon-cyan)] mt-auto">₹300</span>
+            </div>
+            <div class="rounded-2xl bg-white/5 border border-white/5 p-4 flex flex-col justify-between gap-3 group hover:bg-white/8 transition-colors">
+              <span class="text-xs text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
+                Extra page integration
+              </span>
+              <span class="font-display text-sm font-semibold text-[var(--neon-cyan)] mt-auto">₹250/page</span>
+            </div>
+            <div class="rounded-2xl bg-white/5 border border-white/5 p-4 flex flex-col justify-between gap-3 group hover:bg-white/8 transition-colors">
+              <span class="text-xs text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
+                Resume design template
+              </span>
+              <span class="font-display text-sm font-semibold text-[var(--neon-cyan)] mt-auto">₹199</span>
+            </div>
+            <div class="rounded-2xl bg-white/5 border border-white/5 p-4 flex flex-col justify-between gap-3 group hover:bg-white/8 transition-colors">
+              <span class="text-xs text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
+                LinkedIn profile audit
+              </span>
+              <span class="font-display text-sm font-semibold text-[var(--neon-cyan)] mt-auto">₹299</span>
+            </div>
+            <div class="rounded-2xl bg-white/5 border border-white/5 p-4 flex flex-col justify-between gap-3 group hover:bg-white/8 transition-colors">
+              <span class="text-xs text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
+                Fast track 48hr delivery
+              </span>
+              <span class="font-display text-sm font-semibold text-[var(--neon-cyan)] mt-auto">₹500</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Business Section [NEW] -->
+    <section id="business" class="relative py-32 border-t border-white/5">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="grid gap-12 lg:grid-cols-[1fr_1.5fr] items-start">
+          <div class="reveal">
+            <div class="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+              <span class="h-1.5 w-1.5 rounded-full bg-[var(--neon-cyan)] shadow-[0_0_10px_var(--neon-cyan)]"></span>
+              06 — Roadmap
+            </div>
+            <h2 class="mt-5 font-display text-4xl font-bold tracking-tight sm:text-5xl leading-tight">
+              Our step-by-step roadmap to <span class="text-gradient">digital craftsmanship</span>.
+            </h2>
+            <p class="mt-6 text-base text-muted-foreground leading-relaxed">
+              Every phase represents a deliberate, authentic step toward building meaningful digital experiences. We believe in learning thoroughly, shipping honestly, and scaling with our client base.
+            </p>
+          </div>
+
+          <!-- Animated Timeline / Roadmap -->
+          <div class="reveal relative pl-6 border-l border-white/10 md:pl-8 md:ml-4">
+            <div class="space-y-10">
+              <!-- Stage 1 -->
+              <div class="relative group">
+                <div class="absolute -left-[35px] md:-left-[43px] top-1.5 h-6 w-6 rounded-full bg-[#0a0a14] border-2 border-[var(--neon-cyan)] grid place-items-center group-hover:scale-110 transition-transform">
+                  <span class="h-2.5 w-2.5 rounded-full bg-[var(--neon-cyan)] animate-pulse"></span>
+                </div>
+                <div class="glass p-5 rounded-2xl border border-[var(--neon-cyan)]/20 group-hover:border-[var(--neon-cyan)]/30 transition-all">
+                  <div class="flex items-center gap-2 text-[10px] font-semibold text-[var(--neon-cyan)] uppercase tracking-wider">
+                    <span>Phase 01</span>
+                    <span class="h-1 w-1 rounded-full bg-white/20"></span>
+                    <span class="text-muted-foreground font-semibold">Current Focus / Active</span>
+                  </div>
+                  <h4 class="font-display font-bold mt-1 text-foreground text-lg">Portfolio Websites</h4>
+                  <p class="text-sm text-muted-foreground mt-2">Helping fresh graduates and students publish premium, interview-winning personal identities and digital brands.</p>
+                </div>
+              </div>
+
+              <!-- Stage 2 -->
+              <div class="relative group">
+                <div class="absolute -left-[35px] md:-left-[43px] top-1.5 h-6 w-6 rounded-full bg-[#0a0a14] border-2 border-[var(--neon-cyan)] grid place-items-center group-hover:scale-110 transition-transform">
+                  <span class="h-2.5 w-2.5 rounded-full bg-[var(--neon-cyan)]"></span>
+                </div>
+                <div class="glass p-5 rounded-2xl border border-[var(--neon-cyan)]/20 group-hover:border-[var(--neon-cyan)]/30 transition-all">
+                  <div class="flex items-center gap-2 text-[10px] font-semibold text-[var(--neon-cyan)] uppercase tracking-wider">
+                    <span>Phase 02</span>
+                    <span class="h-1 w-1 rounded-full bg-white/20"></span>
+                    <span class="text-muted-foreground font-semibold">Current Focus / Active</span>
+                  </div>
+                  <h4 class="font-display font-bold mt-1 text-foreground text-lg">Personal Branding Solutions</h4>
+                  <p class="text-sm text-muted-foreground mt-2">Designing custom branding packages, professional developer portfolios, and sleek, typography-first landing pages.</p>
+                </div>
+              </div>
+
+              <!-- Stage 3 -->
+              <div class="relative group opacity-85">
+                <div class="absolute -left-[35px] md:-left-[43px] top-1.5 h-6 w-6 rounded-full bg-[#0a0a14] border-2 border-white/20 grid place-items-center group-hover:scale-110 transition-transform">
+                  <span class="h-2.5 w-2.5 rounded-full bg-white/20"></span>
+                </div>
+                <div class="glass p-5 rounded-2xl border border-white/5 group-hover:border-white/10 transition-all">
+                  <div class="flex items-center gap-2 text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">
+                    <span>Phase 03</span>
+                    <span class="h-1 w-1 rounded-full bg-white/20"></span>
+                    <span class="text-muted-foreground font-semibold">Learning Stage / Future Phase</span>
+                  </div>
+                  <h4 class="font-display font-bold mt-1 text-foreground text-lg">Full Stack Website Development</h4>
+                  <p class="text-sm text-muted-foreground mt-2">Actively mastering database architectures, APIs, Django backend services, and multi-page configurations.</p>
+                </div>
+              </div>
+
+              <!-- Stage 4 -->
+              <div class="relative group opacity-85">
+                <div class="absolute -left-[35px] md:-left-[43px] top-1.5 h-6 w-6 rounded-full bg-[#0a0a14] border-2 border-white/20 grid place-items-center group-hover:scale-110 transition-transform">
+                  <span class="h-2.5 w-2.5 rounded-full bg-white/20"></span>
+                </div>
+                <div class="glass p-5 rounded-2xl border border-white/5 group-hover:border-white/10 transition-all">
+                  <div class="flex items-center gap-2 text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">
+                    <span>Phase 04</span>
+                    <span class="h-1 w-1 rounded-full bg-white/20"></span>
+                    <span class="text-muted-foreground font-semibold">Future Phase</span>
+                  </div>
+                  <h4 class="font-display font-bold mt-1 text-foreground text-lg">MVP Development</h4>
+                  <p class="text-sm text-muted-foreground mt-2">Expanding capabilities into rapid prototyping, custom CMS interfaces, and simple client-side startup tools.</p>
+                </div>
+              </div>
+
+              <!-- Stage 5 -->
+              <div class="relative group opacity-85">
+                <div class="absolute -left-[35px] md:-left-[43px] top-1.5 h-6 w-6 rounded-full bg-[#0a0a14] border-2 border-white/20 grid place-items-center group-hover:scale-110 transition-transform">
+                  <span class="h-2.5 w-2.5 rounded-full bg-white/20"></span>
+                </div>
+                <div class="glass p-5 rounded-2xl border border-white/5 group-hover:border-white/10 transition-all">
+                  <div class="flex items-center gap-2 text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">
+                    <span>Phase 05</span>
+                    <span class="h-1 w-1 rounded-full bg-white/20"></span>
+                    <span class="text-muted-foreground font-semibold">Future Vision</span>
+                  </div>
+                  <h4 class="font-display font-bold mt-1 text-foreground text-lg">SaaS Products</h4>
+                  <p class="text-sm text-muted-foreground mt-2">Architecting self-serve utility tools, workflow automations, and modern, lightweight SaaS micro-products.</p>
+                </div>
+              </div>
+            </div>
+          </div>    <!-- Value Proposition Section -->
+    <section id="testimonials" class="relative py-32 border-t border-white/5">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="reveal flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+          <div>
+            <div class="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+              <span class="h-1.5 w-1.5 rounded-full bg-[var(--neon-cyan)] shadow-[0_0_10px_var(--neon-cyan)]"></span>
+              07 — Value Proposition
+            </div>
+            <h2 class="mt-5 font-display text-4xl font-bold tracking-tight sm:text-5xl">
+              Why work <span class="text-gradient">with us</span>.
+            </h2>
+          </div>
+          <p class="max-w-sm text-sm text-muted-foreground leading-relaxed">
+            We focus on delivering high-fidelity visual results built on authentic connections and honest craftsmanship.
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Card 1 -->
+          <div class="reveal group relative h-full overflow-hidden rounded-3xl glass p-7 transition-all hover:border-[var(--neon-blue)]/30">
+            <div class="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[var(--neon-blue)]/5 blur-xl"></div>
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 text-[var(--neon-cyan)]">
+              <i data-lucide="tag" class="h-5 w-5"></i>
+            </div>
+            <h3 class="mt-5 font-display text-lg font-bold tracking-tight text-foreground">Student-friendly pricing</h3>
+            <p class="mt-2.5 text-xs text-muted-foreground leading-relaxed">Designed to be highly affordable for graduates and fresh professionals launching their career presence.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="reveal group relative h-full overflow-hidden rounded-3xl glass p-7 transition-all hover:border-[var(--neon-blue)]/30">
+            <div class="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[var(--neon-blue)]/5 blur-xl"></div>
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 text-[var(--neon-cyan)]">
+              <i data-lucide="sparkles" class="h-5 w-5"></i>
+            </div>
+            <h3 class="mt-5 font-display text-lg font-bold tracking-tight text-foreground">Modern premium design</h3>
+            <p class="mt-2.5 text-xs text-muted-foreground leading-relaxed">Futuristic dark aesthetics, premium glassmorphism, and responsive styling built to wow viewers.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="reveal group relative h-full overflow-hidden rounded-3xl glass p-7 transition-all hover:border-[var(--neon-blue)]/30">
+            <div class="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[var(--neon-blue)]/5 blur-xl"></div>
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 text-[var(--neon-cyan)]">
+              <i data-lucide="heart-handshake" class="h-5 w-5"></i>
+            </div>
+            <h3 class="mt-5 font-display text-lg font-bold tracking-tight text-foreground">Personalized support</h3>
+            <p class="mt-2.5 text-xs text-muted-foreground leading-relaxed">Relentless support from planning to live deployment, with direct and helpful guidance.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="reveal group relative h-full overflow-hidden rounded-3xl glass p-7 transition-all hover:border-[var(--neon-blue)]/30">
+            <div class="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[var(--neon-blue)]/5 blur-xl"></div>
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 text-[var(--neon-cyan)]">
+              <i data-lucide="zap" class="h-5 w-5"></i>
+            </div>
+            <h3 class="mt-5 font-display text-lg font-bold tracking-tight text-foreground">Small startup attention</h3>
+            <p class="mt-2.5 text-xs text-muted-foreground leading-relaxed">No large agency layers. You collaborate directly with a small team who treats your site with absolute priority.</p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="reveal group relative h-full overflow-hidden rounded-3xl glass p-7 transition-all hover:border-[var(--neon-blue)]/30">
+            <div class="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[var(--neon-blue)]/5 blur-xl"></div>
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 text-[var(--neon-cyan)]">
+              <i data-lucide="message-square" class="h-5 w-5"></i>
+            </div>
+            <h3 class="mt-5 font-display text-lg font-bold tracking-tight text-foreground">Honest communication</h3>
+            <p class="mt-2.5 text-xs text-muted-foreground leading-relaxed">Clear timelines, open constraints, and honest feedback. No inflated claims or sales jargon.</p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="reveal group relative h-full overflow-hidden rounded-3xl glass p-7 transition-all hover:border-[var(--neon-blue)]/30">
+            <div class="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[var(--neon-blue)]/5 blur-xl"></div>
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 text-[var(--neon-cyan)]">
+              <i data-lucide="trending-up" class="h-5 w-5"></i>
+            </div>
+            <h3 class="mt-5 font-display text-lg font-bold tracking-tight text-foreground">Growing with clients</h3>
+            <p class="mt-2.5 text-xs text-muted-foreground leading-relaxed">We continuously expand our skills and help your portfolio scale as your career progresses.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="relative py-32 border-t border-white/5">
+      <div class="absolute inset-0 -z-10" style="background: var(--gradient-radial)"></div>
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="grid gap-12 lg:grid-cols-[1fr_1.3fr]">
+          <div class="reveal">
+            <div class="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+              <span class="h-1.5 w-1.5 rounded-full bg-[var(--neon-cyan)] shadow-[0_0_10px_var(--neon-cyan)]"></span>
+              08 — Contact
+            </div>
+            <h2 class="mt-5 font-display text-4xl font-bold tracking-tight sm:text-5xl leading-tight">
+              Need a premium portfolio website? <span class="text-gradient">Let's talk</span>.
+            </h2>
+            <p class="mt-5 text-muted-foreground leading-relaxed">
+              Have a custom design layout in mind, want to build a personal branding presence, or discuss a portfolio redesign? Let's discuss.
+            </p>
+
+            <div class="mt-8 grid gap-3">
+              <a href="mailto:akhil@palaparthi.dev" class="group flex items-center gap-3 rounded-2xl glass px-4 py-3.5 transition-all hover:-translate-y-0.5 hover:border-[var(--neon-blue)]/40">
+                <span class="grid h-9 w-9 place-items-center rounded-xl bg-white/5 text-[var(--neon-cyan)]">
+                  <i data-lucide="mail" class="h-4 w-4"></i>
+                </span>
+                <span class="text-sm">akhil@palaparthi.dev</span>
+              </a>
+              <a href="https://wa.me/910000000000" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 rounded-2xl glass px-4 py-3.5 transition-all hover:-translate-y-0.5 hover:border-[var(--neon-blue)]/40">
+                <span class="grid h-9 w-9 place-items-center rounded-xl bg-white/5 text-[var(--neon-cyan)]">
+                  <i data-lucide="message-circle" class="h-4 w-4"></i>
+                </span>
+                <span class="text-sm">Chat on WhatsApp</span>
+              </a>
+              <a href="https://linkedin.com/in/akhilpalaparthi" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 rounded-2xl glass px-4 py-3.5 transition-all hover:-translate-y-0.5 hover:border-[var(--neon-blue)]/40">
+                <span class="grid h-9 w-9 place-items-center rounded-xl bg-white/5 text-[var(--neon-cyan)]">
+                  <i data-lucide="linkedin" class="h-4 w-4"></i>
+                </span>
+                <span class="text-sm">Connect on LinkedIn</span>
+              </a>
+              <a href="https://github.com/akhilpalaparthi" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 rounded-2xl glass px-4 py-3.5 transition-all hover:-translate-y-0.5 hover:border-[var(--neon-blue)]/40">
+                <span class="grid h-9 w-9 place-items-center rounded-xl bg-white/5 text-[var(--neon-cyan)]">
+                  <i data-lucide="github" class="h-4 w-4"></i>
+                </span>
+                <span class="text-sm">Explore GitHub Repositories</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form with Advanced JS Validation -->
+          <div class="reveal">
+            <form id="contact-form" class="relative overflow-hidden rounded-3xl glass-strong p-6 sm:p-8">
+              {% csrf_token %}
+              <div class="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[var(--neon-purple)]/20 blur-3xl"></div>
+              
+              <div class="grid gap-5 sm:grid-cols-2">
+                <div class="block">
+                  <span class="mb-2 block text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Full Name</span>
+                  <input required id="form-name" name="name" class="input" placeholder="Your name" />
+                </div>
+                <div class="block">
+                  <span class="mb-2 block text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Email Address</span>
+                  <input required type="email" id="form-email" name="email" class="input" placeholder="you@company.com" />
+                </div>
+                <div class="block">
+                  <span class="mb-2 block text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Project Category</span>
+                  <select name="type" id="form-type" class="input">
+                    <option value="Portfolio Site">Portfolio Site</option>
+                    <option value="Personal Branding">Personal Branding</option>
+                    <option value="Portfolio Redesign">Portfolio Redesign</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="block">
+                  <span class="mb-2 block text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Inquiry Budget</span>
+                  <select name="budget" id="form-budget" class="input">
+                    <option value="< ₹1,000">&lt; ₹1,000</option>
+                    <option value="₹1,000 – ₹2,500" selected>₹1,000 – ₹2,500</option>
+                    <option value="₹2,500+">₹2,500+</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="sm:col-span-2">
+                  <div class="block">
+                    <span class="mb-2 block text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Project Goals</span>
+                    <textarea required name="message" id="form-message" rows="5" class="input resize-none" placeholder="Tell me about your product requirements, deadlines and details..."></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Submit button and feedback message -->
+              <div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-4">
+                <button
+                  type="submit"
+                  id="submit-btn"
+                  class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] px-6 py-3 text-sm font-semibold text-background shadow-[0_0_40px_-10px_var(--neon-purple)] transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50"
+                >
+                  <span id="btn-text">Submit Inquiry</span>
+                  <i data-lucide="send" id="btn-icon" class="h-4 w-4"></i>
+                </button>
+                <div id="form-feedback" class="text-sm font-medium hidden"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative border-t border-white/5 py-14 z-10 bg-background">
+    <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 md:grid-cols-[1.5fr_1fr_1fr]">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="relative grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-[var(--neon-blue)] to-[var(--neon-purple)] font-display text-sm font-bold text-background">AP</span>
+          <span class="font-display text-lg font-semibold">Akhil Palaparthi</span>
+        </div>
+        <p class="mt-4 max-w-sm text-sm text-muted-foreground leading-relaxed">
+          Building premium digital identities today. Growing into digital product development tomorrow.
+        </p>
+      </div>
+      <div>
+        <div class="text-xs uppercase tracking-[0.2em] text-muted-foreground">Framework Navigation</div>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a href="#about" class="text-foreground/80 hover:text-foreground transition-colors">About</a></li>
+          <li><a href="#skills" class="text-foreground/80 hover:text-foreground transition-colors">Skills</a></li>
+          <li><a href="#projects" class="text-foreground/80 hover:text-foreground transition-colors">Work</a></li>
+          <li><a href="#services" class="text-foreground/80 hover:text-foreground transition-colors">Services</a></li>
+          <li><a href="#pricing" class="text-foreground/80 hover:text-foreground transition-colors">Pricing</a></li>
+          <li><a href="#business" class="text-foreground/80 hover:text-foreground transition-colors">Vision</a></li>
+          <li><a href="#contact" class="text-foreground/80 hover:text-foreground transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="text-xs uppercase tracking-[0.2em] text-muted-foreground">Social Gateways</div>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <a href="mailto:akhil@palaparthi.dev" aria-label="Email" class="grid h-10 w-10 place-items-center rounded-xl glass hover:border-[var(--neon-blue)]/40 hover:text-[var(--neon-cyan)] transition-all">
+            <i data-lucide="mail" class="h-4 w-4"></i>
+          </a>
+          <a href="https://wa.me/910000000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="grid h-10 w-10 place-items-center rounded-xl glass hover:border-[var(--neon-blue)]/40 hover:text-[var(--neon-cyan)] transition-all">
+            <i data-lucide="message-circle" class="h-4 w-4"></i>
+          </a>
+          <a href="https://linkedin.com/in/akhilpalaparthi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="grid h-10 w-10 place-items-center rounded-xl glass hover:border-[var(--neon-blue)]/40 hover:text-[var(--neon-cyan)] transition-all">
+            <i data-lucide="linkedin" class="h-4 w-4"></i>
+          </a>
+          <a href="https://github.com/akhilpalaparthi" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="grid h-10 w-10 place-items-center rounded-xl glass hover:border-[var(--neon-blue)]/40 hover:text-[var(--neon-cyan)] transition-all">
+            <i data-lucide="github" class="h-4 w-4"></i>
+          </a>
+        </div>
+        <div class="mt-4 text-[10px] text-muted-foreground leading-relaxed">
+          Engineered using Django, SQLite, and Three.js. Optimised for speed and fluid runtime interactivity.
+        </div>
+      </div>
+    </div>
+    <div class="mx-auto mt-10 flex max-w-7xl flex-col items-center justify-between gap-3 border-t border-white/5 px-5 pt-6 text-xs text-muted-foreground sm:flex-row sm:px-8">
+      <span>© <span id="current-year">2026</span> Akhil Palaparthi. All rights reserved.</span>
+      <span>Crafted with intent · Built for the future</span>
+    </div>
+  </footer>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Lenis Smooth Scrolling CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+
+  <!-- Premium Interactive JavaScript Scripts -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Set Copyright Year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // ----------------------------------------------------
+    // Loading Screen / Preloader Logic
+    // ----------------------------------------------------
+    const preloader = document.getElementById('preloader');
+    const preloaderPercent = document.getElementById('preloader-percent');
+    const preloaderBar = document.getElementById('preloader-bar');
+    
+    let loadedAssets = 0;
+    const assetsToLoad = 8; // Simulating assets check
+    
+    function updatePreloader() {
+      loadedAssets++;
+      const percentage = Math.min(100, Math.floor((loadedAssets / assetsToLoad) * 100));
+      preloaderPercent.textContent = `${percentage}%`;
+      preloaderBar.style.width = `${percentage}%`;
+      
+      if (loadedAssets >= assetsToLoad) {
+        setTimeout(() => {
+          preloader.style.opacity = '0';
+          preloader.style.visibility = 'hidden';
+          // Trigger counters animation once preloader finishes
+          setTimeout(animateCounters, 300);
+        }, 500);
+      }
+    }
+    
+    // Simulate gradual asset loading
+    for (let i = 0; i < assetsToLoad; i++) {
+      setTimeout(updatePreloader, Math.random() * 600 + (i * 100));
+    }
+
+    // ----------------------------------------------------
+    // Lenis Smooth Scroll Setup
+    // ----------------------------------------------------
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true
+    });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Bind navigation clicks to Lenis scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#top') {
+          lenis.scrollTo(0);
+        } else {
+          const target = document.querySelector(targetId);
+          if (target) lenis.scrollTo(target);
+        }
+        
+        // Close mobile drawer if clicking a link
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        if (!mobileDrawer.classList.contains('hidden') && this.classList.contains('mobile-nav-link')) {
+          toggleMobileMenu();
+        }
+      });
+    });
+
+    // ----------------------------------------------------
+    // Custom Cursors & Click Spotlights & Scroll Indicators
+    // ----------------------------------------------------
+    const cursor = document.getElementById('custom-cursor');
+    const cursorRing = document.getElementById('custom-cursor-ring');
+    const spotlight = document.getElementById('spotlight');
+    const scrollProgress = document.getElementById('scroll-progress');
+    const navbar = document.getElementById('navbar');
+    const navContainer = document.getElementById('nav-container');
+
+    let mouseX = -100;
+    let mouseY = -100;
+    let ringX = -100;
+    let ringY = -100;
+    let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+
+    if (isMobile) {
+      if (cursor) cursor.style.display = 'none';
+      if (cursorRing) cursorRing.style.display = 'none';
+    } else {
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+    }
+
+    // Animate outer ring and pointer dot aligned with repaint cycles
+    function animateRing() {
+      if (isMobile) return;
+      const dx = mouseX - ringX;
+      const dy = mouseY - ringY;
+      ringX += dx * 0.15;
+      ringY += dy * 0.15;
+      cursorRing.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
+      cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+      
+      // Only draw radial gradient spotlight in the active viewport (Hero area)
+      if (window.scrollY < window.innerHeight) {
+        spotlight.style.background = `radial-gradient(650px circle at ${mouseX}px ${mouseY}px, oklch(0.7 0.22 250 / 0.13), transparent 70%)`;
+      }
+      
+      requestAnimationFrame(animateRing);
+    }
+    
+    if (!isMobile) {
+      animateRing();
+    }
+
+    // Hover effect for clickables
+    document.querySelectorAll('a, button, [data-cursor="hover"], select, input, textarea').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursorRing.classList.add('scale-[1.6]');
+        cursorRing.style.borderColor = 'oklch(0.82 0.18 195 / 0.8)'; // Neon Cyan glow
+        cursorRing.style.background = 'oklch(0.82 0.18 195 / 0.05)';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursorRing.classList.remove('scale-[1.6]');
+        cursorRing.style.borderColor = 'oklch(0.7 0.22 250 / 0.6)';
+        cursorRing.style.background = 'transparent';
+      });
+    });
+
+    // ----------------------------------------------------
+    // Navbar Scroll-Activated Styling
+    // ----------------------------------------------------
+    window.addEventListener('scroll', () => {
+      const isScrolled = window.scrollY > 24;
+      if (isScrolled) {
+        navbar.classList.remove('py-5');
+        navbar.classList.add('py-3');
+        navContainer.classList.add('glass-strong');
+      } else {
+        navbar.classList.remove('py-3');
+        navbar.classList.add('py-5');
+        navContainer.classList.remove('glass-strong');
+      }
+
+      // Scroll Progress Indicator
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = scrollHeight > 0 ? (window.scrollY / scrollHeight) : 0;
+      scrollProgress.style.transform = `scaleX(${progress})`;
+    });
+
+    // ----------------------------------------------------
+    // Mobile Drawer Menu
+    // ----------------------------------------------------
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const bar1 = document.getElementById('bar-1');
+    const bar2 = document.getElementById('bar-2');
+    const bar3 = document.getElementById('bar-3');
+
+    function toggleMobileMenu() {
+      const isOpen = !mobileDrawer.classList.contains('hidden');
+      if (isOpen) {
+        mobileDrawer.classList.add('hidden');
+        bar1.classList.remove('translate-y-2', 'rotate-45');
+        bar2.classList.remove('opacity-0');
+        bar3.classList.remove('-translate-y-2', '-rotate-45');
+      } else {
+        mobileDrawer.classList.remove('hidden');
+        bar1.classList.add('translate-y-2', 'rotate-45');
+        bar2.classList.add('opacity-0');
+        bar3.classList.add('-translate-y-2', '-rotate-45');
+      }
+    }
+    mobileBtn.addEventListener('click', toggleMobileMenu);
+
+    // ----------------------------------------------------
+    // Section Scroll Reveal IntersectionObserver
+    // ----------------------------------------------------
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -80px 0px'
+    });
+
+    reveals.forEach(r => revealObserver.observe(r));
+
+    // ----------------------------------------------------
+    // Animated Counters for Metrics
+    // ----------------------------------------------------
+    function animateCounters() {
+      const counters = document.querySelectorAll('[data-target]');
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+          const speed = 40; // lower number = faster
+          const increment = Math.max(1, Math.ceil(target / speed));
+          
+          if (count < target) {
+            counter.innerText = count + increment;
+            setTimeout(updateCount, 25);
+          } else {
+            counter.innerText = target + '+';
+          }
+        };
+        updateCount();
+      });
+    }
+
+    // ----------------------------------------------------
+    // 3D Card Interactive Tilt Effect (Desktop Only)
+    // ----------------------------------------------------
+    if (window.innerWidth > 768) {
+      document.querySelectorAll('.tilt-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          const rotateX = -(y - centerY) / 8;
+          const rotateY = (x - centerX) / 8;
+          
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        });
+      });
+    }
+
+    // ----------------------------------------------------
+    // Testimonials Carousel Logic
+    // ----------------------------------------------------
+    const carousel = document.getElementById('testimonial-carousel');
+    const prevBtn = document.getElementById('prev-slide');
+    const nextBtn = document.getElementById('next-slide');
+    const dotsContainer = document.getElementById('carousel-dots');
+    
+    let currentIndex = 0;
+    let autoSlideInterval;
+    
+    function getSlideWidth() {
+      const slides = carousel.children;
+      if (slides.length === 0) return 0;
+      return slides[0].offsetWidth + 24; // offset width plus gap
+    }
+    
+    function getVisibleSlidesCount() {
+      if (window.innerWidth >= 1024) return 3;
+      if (window.innerWidth >= 768) return 2;
+      return 1;
+    }
+    
+    function maxIndex() {
+      const totalSlides = carousel.children.length;
+      return Math.max(0, totalSlides - getVisibleSlidesCount());
+    }
+
+    function createCarouselDots() {
+      dotsContainer.innerHTML = '';
+      const dotCount = maxIndex() + 1;
+      for (let i = 0; i < dotCount; i++) {
+        const dot = document.createElement('button');
+        dot.className = `h-2 w-2 rounded-full transition-all ${i === currentIndex ? 'bg-[var(--neon-cyan)] w-5' : 'bg-white/20 hover:bg-white/45'}`;
+        dot.ariaLabel = `Go to slide group ${i+1}`;
+        dot.addEventListener('click', () => {
+          goToSlide(i);
+          resetAutoSlide();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function goToSlide(index) {
+      currentIndex = Math.min(maxIndex(), Math.max(0, index));
+      const offset = -currentIndex * getSlideWidth();
+      carousel.style.transform = `translateX(${offset}px)`;
+      
+      // Update dot styles
+      Array.from(dotsContainer.children).forEach((dot, idx) => {
+        if (idx === currentIndex) {
+          dot.className = 'h-2 w-5 rounded-full bg-[var(--neon-cyan)] transition-all';
+        } else {
+          dot.className = 'h-2 w-2 rounded-full bg-white/20 hover:bg-white/45 transition-all';
+        }
+      });
+    }
+    
+    prevBtn.addEventListener('click', () => {
+      goToSlide(currentIndex - 1);
+      resetAutoSlide();
+    });
+    
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex >= maxIndex()) {
+        goToSlide(0); // wrap around
+      } else {
+        goToSlide(currentIndex + 1);
+      }
+      resetAutoSlide();
+    });
+    
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(() => {
+        if (currentIndex >= maxIndex()) {
+          goToSlide(0);
+        } else {
+          goToSlide(currentIndex + 1);
+        }
+      }, 5000);
+    }
+    
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    }
+    
+    window.addEventListener('resize', () => {
+      goToSlide(Math.min(currentIndex, maxIndex()));
+      createCarouselDots();
+    });
+    
+    setTimeout(() => {
+      createCarouselDots();
+      startAutoSlide();
+    }, 1000);
+
+    // ----------------------------------------------------
+    // Interactive 2D particles network canvas
+    // ----------------------------------------------------
+    const pCanvas = document.getElementById('particles-canvas');
+    const pCtx = pCanvas.getContext('2d');
+    
+    let pWidth = 0;
+    let pHeight = 0;
+    let pMouse = { x: -9999, y: -9999 };
+    let particles = [];
+    const particleColors = ["#22d3ee", "#7c5cff", "#3b82f6", "#a855f7"];
+
+    function resizeParticlesCanvas() {
+      if (isMobile) {
+        pCanvas.style.display = 'none'; // Completely disable on mobile to boost scroll speed
+        return;
+      }
+      const dpr = window.devicePixelRatio || 1;
+      pWidth = pCanvas.width = window.innerWidth * dpr;
+      pHeight = pCanvas.height = window.innerHeight * dpr;
+      pCanvas.style.width = window.innerWidth + "px";
+      pCanvas.style.height = window.innerHeight + "px";
+      pCtx.scale(dpr, dpr);
+      
+      // Reduced maximum particle count to 35 on desktop for optimal rendering performance
+      const count = Math.min(35, Math.floor(window.innerWidth * 0.02));
+      particles = [];
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35,
+          r: Math.random() * 1.5 + 0.5,
+          c: particleColors[Math.floor(Math.random() * particleColors.length)],
+        });
+      }
+    }
+    resizeParticlesCanvas();
+    window.addEventListener('resize', resizeParticlesCanvas);
+
+    if (!isMobile) {
+      window.addEventListener('mousemove', (e) => {
+        pMouse.x = e.clientX;
+        pMouse.y = e.clientY;
+      });
+    }
+
+    function drawParticles() {
+      if (isMobile || document.hidden) {
+        requestAnimationFrame(drawParticles);
+        return;
+      }
+      pCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      
+      // Update and draw particles
+      particles.forEach(p => {
+        const dx = p.x - pMouse.x;
+        const dy = p.y - pMouse.y;
+        const dist2 = dx * dx + dy * dy;
+        
+        // Cursor repulsion
+        if (dist2 < 12000) {
+          const force = (12000 - dist2) / 12000;
+          p.vx += (dx / Math.sqrt(dist2 + 1)) * force * 0.03;
+          p.vy += (dy / Math.sqrt(dist2 + 1)) * force * 0.03;
+        }
+
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vx *= 0.985;
+        p.vy *= 0.985;
+
+        // Wrap boundaries
+        if (p.x < 0) p.x = window.innerWidth;
+        if (p.x > window.innerWidth) p.x = 0;
+        if (p.y < 0) p.y = window.innerHeight;
+        if (p.y > window.innerHeight) p.y = 0;
+
+        pCtx.beginPath();
+        pCtx.fillStyle = p.c;
+        pCtx.globalAlpha = 0.55;
+        pCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        pCtx.fill();
+      });
+
+      // Draw network linking lines with smart distance clipping (88% computation reduction!)
+      pCtx.globalAlpha = 0.09;
+      for (let i = 0; i < particles.length; i++) {
+        const a = particles[i];
+        for (let j = i + 1; j < particles.length; j++) {
+          const b = particles[j];
+          const dx = a.x - b.x;
+          if (Math.abs(dx) > 95) continue; // Skip calculation if far away on X
+          const dy = a.y - b.y;
+          if (Math.abs(dy) > 95) continue; // Skip calculation if far away on Y
+          
+          const dist2 = dx * dx + dy * dy;
+          if (dist2 < 9000) {
+            pCtx.strokeStyle = a.c;
+            pCtx.lineWidth = 0.45;
+            pCtx.beginPath();
+            pCtx.moveTo(a.x, a.y);
+            pCtx.lineTo(b.x, b.y);
+            pCtx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(drawParticles);
+    }
+    requestAnimationFrame(drawParticles);
+
+    // ----------------------------------------------------
+    // Three.js 3D Orb Scene Implementation
+    // ----------------------------------------------------
+    let tScene, tCamera, tRenderer, tOrb, tOrbGeo, tOriginalPositions = [];
+    let tRingsGroup = new THREE.Group();
+    let tSatellitesGroup = new THREE.Group();
+    let tStarsPoints;
+    let tClock = new THREE.Clock();
+
+    function init3DScene() {
+      const container = document.getElementById('top');
+      const canvas = document.getElementById('scene-3d-canvas');
+      if (!canvas) return;
+
+      // Scene, Camera, Renderer
+      tScene = new THREE.Scene();
+      tCamera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 100);
+      tCamera.position.z = 6.2;
+
+      tRenderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+      tRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.4));
+      tRenderer.setSize(window.innerWidth, window.innerHeight);
+
+      // Lights
+      const ambient = new THREE.AmbientLight(0xffffff, 0.25);
+      tScene.add(ambient);
+
+      const pt1 = new THREE.PointLight(0x7c5cff, 2.2, 50);
+      pt1.position.set(5, 5, 5);
+      tScene.add(pt1);
+
+      const pt2 = new THREE.PointLight(0x22d3ee, 1.6, 50);
+      pt2.position.set(-5, -3, 4);
+      tScene.add(pt2);
+
+      // Central Orb Geometry and Distort setup
+      tOrbGeo = new THREE.IcosahedronGeometry(1.4, 4);
+      
+      const posAttr = tOrbGeo.attributes.position;
+      const vertex = new THREE.Vector3();
+      for (let i = 0; i < posAttr.count; i++) {
+        vertex.fromBufferAttribute(posAttr, i);
+        tOriginalPositions.push(vertex.clone());
+      }
+
+      const orbMat = new THREE.MeshPhysicalMaterial({
+        color: 0x7c5cff,
+        emissive: 0x3a1f8a,
+        emissiveIntensity: 0.45,
+        roughness: 0.12,
+        metalness: 0.88,
+        clearcoat: 1.0,
+        clearcoatRoughness: 0.08
+      });
+
+      tOrb = new THREE.Mesh(tOrbGeo, orbMat);
+      tScene.add(tOrb);
+
+      // Torus Rings
+      const ring1 = new THREE.Mesh(
+        new THREE.TorusGeometry(2.4, 0.012, 16, 200),
+        new THREE.MeshStandardMaterial({ color: 0x22d3ee, emissive: 0x22d3ee, emissiveIntensity: 1.2, roughness: 0.1 })
+      );
+      tRingsGroup.add(ring1);
+
+      const ring2 = new THREE.Mesh(
+        new THREE.TorusGeometry(2.9, 0.008, 16, 200),
+        new THREE.MeshStandardMaterial({ color: 0xa855f7, emissive: 0xa855f7, emissiveIntensity: 1.1, roughness: 0.1 })
+      );
+      ring2.rotation.x = Math.PI / 3;
+      tRingsGroup.add(ring2);
+
+      const ring3 = new THREE.Mesh(
+        new THREE.TorusGeometry(3.4, 0.006, 16, 200),
+        new THREE.MeshStandardMaterial({ color: 0x3b82f6, emissive: 0x3b82f6, emissiveIntensity: 1.0, roughness: 0.1 })
+      );
+      ring3.rotation.set(Math.PI / 1.6, Math.PI / 4, 0);
+      tRingsGroup.add(ring3);
+
+      tScene.add(tRingsGroup);
+
+      // Orbiting Satellites
+      const satColors = [0x67e8f9, 0xa855f7, 0x22d3ee, 0x3b82f6, 0x7c5cff, 0x67e8f9];
+      const satCount = 6;
+      for (let i = 0; i < satCount; i++) {
+        const sat = new THREE.Mesh(
+          new THREE.SphereGeometry(0.05, 16, 16),
+          new THREE.MeshStandardMaterial({ color: satColors[i], emissive: satColors[i], emissiveIntensity: 2.0, roughness: 0.1 })
+        );
+        const angle = (i / satCount) * Math.PI * 2;
+        const radius = 2.6;
+        sat.position.set(Math.cos(angle) * radius, 0, Math.sin(angle) * radius);
+        sat.userData = { angle: angle, radius: radius, floatOffset: Math.random() * 100 };
+        tSatellitesGroup.add(sat);
+      }
+      tScene.add(tSatellitesGroup);
+
+      // Background Starfield
+      const starsCount = 1000;
+      const starsGeo = new THREE.BufferGeometry();
+      const starsPos = new Float32Array(starsCount * 3);
+      for (let i = 0; i < starsCount * 3; i += 3) {
+        const u = Math.random();
+        const v = Math.random();
+        const theta = u * 2.0 * Math.PI;
+        const phi = Math.acos(2.0 * v - 1.0);
+        const r = 25 + Math.random() * 20;
+        
+        starsPos[i] = r * Math.sin(phi) * Math.cos(theta);
+        starsPos[i+1] = r * Math.sin(phi) * Math.sin(theta);
+        starsPos[i+2] = r * Math.cos(phi);
+      }
+      starsGeo.setAttribute('position', new THREE.BufferAttribute(starsPos, 3));
+      
+      const starsMat = new THREE.PointsMaterial({
+        color: 0x8888aa,
+        size: 0.03,
+        transparent: true,
+        opacity: 0.7
+      });
+      tStarsPoints = new THREE.Points(starsGeo, starsMat);
+      tScene.add(tStarsPoints);
+
+      animate3DScene();
+    }
+
+    let tScene, tCamera, tRenderer, tOrb, tOrbGeo;
+    let tOriginalPositions = [];
+    let tNormalizedPositions = []; // Precomputed normalized vectors (no GC!)
+    let tRingsGroup = new THREE.Group();
+    let tSatellitesGroup = new THREE.Group();
+    let tStarsPoints;
+    let tClock = new THREE.Clock();
+    let isHeroVisible = true; // Visibility culling flag
+
+    function init3DScene() {
+      const container = document.getElementById('top');
+      const canvas = document.getElementById('scene-3d-canvas');
+      if (!canvas) return;
+
+      // Set up Intersection Observer to stop rendering and math calculations when off-screen!
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          isHeroVisible = entry.isIntersecting;
+        });
+      }, { threshold: 0.05 });
+      observer.observe(container);
+
+      // Scene, Camera, Renderer
+      tScene = new THREE.Scene();
+      tCamera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 100);
+      tCamera.position.z = 6.2;
+
+      tRenderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: !isMobile, alpha: true });
+      tRenderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio, 1.3));
+      tRenderer.setSize(window.innerWidth, window.innerHeight);
+
+      // Lights
+      const ambient = new THREE.AmbientLight(0xffffff, 0.25);
+      tScene.add(ambient);
+
+      const pt1 = new THREE.PointLight(0x7c5cff, 2.2, 50);
+      pt1.position.set(5, 5, 5);
+      tScene.add(pt1);
+
+      const pt2 = new THREE.PointLight(0x22d3ee, 1.6, 50);
+      pt2.position.set(-5, -3, 4);
+      tScene.add(pt2);
+
+      // Central Orb Geometry (Reduced detail on mobile)
+      const detail = isMobile ? 1 : 3;
+      tOrbGeo = new THREE.IcosahedronGeometry(1.4, detail);
+      
+      const posAttr = tOrbGeo.attributes.position;
+      const vertex = new THREE.Vector3();
+      for (let i = 0; i < posAttr.count; i++) {
+        vertex.fromBufferAttribute(posAttr, i);
+        tOriginalPositions.push(vertex.clone());
+        tNormalizedPositions.push(vertex.clone().normalize()); // Precompute normalized original position vectors once!
+      }
+
+      const orbMat = new THREE.MeshPhysicalMaterial({
+        color: 0x7c5cff,
+        emissive: 0x3a1f8a,
+        emissiveIntensity: 0.45,
+        roughness: 0.12,
+        metalness: 0.88,
+        clearcoat: isMobile ? 0.0 : 1.0, // Disable clearcoat on mobile to save layout repaints
+        clearcoatRoughness: 0.08
+      });
+
+      tOrb = new THREE.Mesh(tOrbGeo, orbMat);
+      tScene.add(tOrb);
+
+      // Torus Rings (Reduced geometries from 16, 200 to 8, 80)
+      const ring1 = new THREE.Mesh(
+        new THREE.TorusGeometry(2.4, 0.012, 8, 80),
+        new THREE.MeshStandardMaterial({ color: 0x22d3ee, emissive: 0x22d3ee, emissiveIntensity: 1.2, roughness: 0.1 })
+      );
+      tRingsGroup.add(ring1);
+
+      const ring2 = new THREE.Mesh(
+        new THREE.TorusGeometry(2.9, 0.008, 8, 80),
+        new THREE.MeshStandardMaterial({ color: 0xa855f7, emissive: 0xa855f7, emissiveIntensity: 1.1, roughness: 0.1 })
+      );
+      ring2.rotation.x = Math.PI / 3;
+      tRingsGroup.add(ring2);
+
+      const ring3 = new THREE.Mesh(
+        new THREE.TorusGeometry(3.4, 0.006, 8, 80),
+        new THREE.MeshStandardMaterial({ color: 0x3b82f6, emissive: 0x3b82f6, emissiveIntensity: 1.0, roughness: 0.1 })
+      );
+      ring3.rotation.set(Math.PI / 1.6, Math.PI / 4, 0);
+      tRingsGroup.add(ring3);
+
+      tScene.add(tRingsGroup);
+
+      // Orbiting Satellites (Reduced count on mobile)
+      const satColors = [0x67e8f9, 0xa855f7, 0x22d3ee, 0x3b82f6, 0x7c5cff, 0x67e8f9];
+      const satCount = isMobile ? 3 : 6;
+      for (let i = 0; i < satCount; i++) {
+        const sat = new THREE.Mesh(
+          new THREE.SphereGeometry(0.05, 8, 8),
+          new THREE.MeshStandardMaterial({ color: satColors[i], emissive: satColors[i], emissiveIntensity: 2.0, roughness: 0.1 })
+        );
+        const angle = (i / satCount) * Math.PI * 2;
+        const radius = 2.6;
+        sat.position.set(Math.cos(angle) * radius, 0, Math.sin(angle) * radius);
+        sat.userData = { angle: angle, radius: radius, floatOffset: Math.random() * 100 };
+        tSatellitesGroup.add(sat);
+      }
+      tScene.add(tSatellitesGroup);
+
+      // Background Starfield (Reduced stars from 1000 to 300)
+      const starsCount = isMobile ? 100 : 300;
+      const starsGeo = new THREE.BufferGeometry();
+      const starsPos = new Float32Array(starsCount * 3);
+      for (let i = 0; i < starsCount * 3; i += 3) {
+        const u = Math.random();
+        const v = Math.random();
+        const theta = u * 2.0 * Math.PI;
+        const phi = Math.acos(2.0 * v - 1.0);
+        const r = 25 + Math.random() * 20;
+        
+        starsPos[i] = r * Math.sin(phi) * Math.cos(theta);
+        starsPos[i+1] = r * Math.sin(phi) * Math.sin(theta);
+        starsPos[i+2] = r * Math.cos(phi);
+      }
+      starsGeo.setAttribute('position', new THREE.BufferAttribute(starsPos, 3));
+      
+      const starsMat = new THREE.PointsMaterial({
+        color: 0x8888aa,
+        size: 0.03,
+        transparent: true,
+        opacity: 0.7
+      });
+      tStarsPoints = new THREE.Points(starsGeo, starsMat);
+      tScene.add(tStarsPoints);
+
+      animate3DScene();
+    }
+
+    function animate3DScene() {
+      requestAnimationFrame(animate3DScene);
+
+      // Fully skip rendering and math when off-screen or tab is hidden!
+      if (!isHeroVisible || document.hidden) return;
+
+      const time = tClock.getElapsedTime();
+      
+      // Rotate Orb
+      if (tOrb) {
+        tOrb.rotation.x = time * 0.12;
+        tOrb.rotation.y = time * 0.18;
+
+        // Skip vertex distortion on mobile to maximize battery and scroll performance
+        if (!isMobile) {
+          const posAttr = tOrbGeo.attributes.position;
+          const vertex = new THREE.Vector3();
+          const distortTime = time * 1.8;
+          
+          for (let i = 0; i < posAttr.count; i++) {
+            const orig = tOriginalPositions[i];
+            const norm = tNormalizedPositions[i]; // Precomputed normalized vectors (no GC!)
+            const wave = Math.sin(orig.x * 2.0 + distortTime) * 
+                         Math.cos(orig.y * 2.0 + distortTime) * 
+                         Math.sin(orig.z * 2.0 + distortTime) * 0.16;
+            
+            vertex.copy(orig).addScaledVector(norm, wave);
+            posAttr.setXYZ(i, vertex.x, vertex.y, vertex.z);
+          }
+          posAttr.needsUpdate = true;
+          tOrbGeo.computeVertexNormals();
+        }
+      }
+
+      // Rotate and float rings
+      if (tRingsGroup) {
+        tRingsGroup.rotation.z = time * 0.08;
+        tRingsGroup.rotation.x = Math.sin(time * 0.25) * 0.2;
+      }
+
+      // Rotate Satellites
+      if (tSatellitesGroup) {
+        tSatellitesGroup.rotation.y = time * 0.2;
+        tSatellitesGroup.children.forEach(sat => {
+          const data = sat.userData;
+          sat.position.y = Math.sin(time * 2.0 + data.floatOffset) * 0.35;
+        });
+      }
+
+      // Starfield Rotation
+      if (tStarsPoints) {
+        tStarsPoints.rotation.y = time * 0.015;
+      }
+
+      tRenderer.render(tScene, tCamera);
+    }
+
+    window.addEventListener('resize', () => {
+      if (!tCamera || !tRenderer) return;
+      tCamera.aspect = window.innerWidth / window.innerHeight;
+      tCamera.updateProjectionMatrix();
+      tRenderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    window.addEventListener('load', init3DScene);
+
+    // ----------------------------------------------------
+    // AJAX Contact Form Submission & Validation
+    // ----------------------------------------------------
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnIcon = document.getElementById('btn-icon');
+    const formFeedback = document.getElementById('form-feedback');
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formName = document.getElementById('form-name');
+      const formEmail = document.getElementById('form-email');
+      const formMessage = document.getElementById('form-message');
+      
+      let hasError = false;
+      
+      // Custom validation styles
+      if (formName.value.trim().length < 2) {
+        formName.style.borderColor = 'oklch(0.65 0.2 20 / 0.5)'; // red glow
+        formName.style.boxShadow = '0 0 10px rgba(239, 68, 68, 0.3)';
+        hasError = true;
+      } else {
+        formName.style.borderColor = 'rgba(255,255,255,0.08)';
+        formName.style.boxShadow = 'none';
+      }
+      
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formEmail.value.trim())) {
+        formEmail.style.borderColor = 'oklch(0.65 0.2 20 / 0.5)';
+        formEmail.style.boxShadow = '0 0 10px rgba(239, 68, 68, 0.3)';
+        hasError = true;
+      } else {
+        formEmail.style.borderColor = 'rgba(255,255,255,0.08)';
+        formEmail.style.boxShadow = 'none';
+      }
+      
+      if (formMessage.value.trim().length < 10) {
+        formMessage.style.borderColor = 'oklch(0.65 0.2 20 / 0.5)';
+        formMessage.style.boxShadow = '0 0 10px rgba(239, 68, 68, 0.3)';
+        hasError = true;
+      } else {
+        formMessage.style.borderColor = 'rgba(255,255,255,0.08)';
+        formMessage.style.boxShadow = 'none';
+      }
+      
+      if (hasError) {
+        formFeedback.textContent = "Please complete all fields with valid data.";
+        formFeedback.className = "text-sm font-semibold text-rose-400 block mt-2 sm:mt-0";
+        formFeedback.classList.remove('hidden');
+        return;
+      }
+
+      // Update UI to "Sending"
+      submitBtn.disabled = true;
+      btnText.textContent = "Submitting...";
+      btnIcon.setAttribute('data-lucide', 'loader-2');
+      btnIcon.classList.add('animate-spin');
+      lucide.createIcons();
+
+      const formData = new FormData(contactForm);
+      const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+      try {
+        const response = await fetch('/contact/', {
+          method: 'POST',
+          headers: {
+            'X-CSRFToken': csrftoken,
+            'Accept': 'application/json'
+          },
+          body: formData
+        });
+
+        const result = await response.json();
+        btnIcon.classList.remove('animate-spin');
+        
+        if (response.ok && result.success) {
+          btnText.textContent = "Inquiry Sent!";
+          btnIcon.setAttribute('data-lucide', 'check');
+          lucide.createIcons();
+          
+          formFeedback.textContent = result.message;
+          formFeedback.className = "text-sm font-semibold text-emerald-400 block mt-2 sm:mt-0";
+          formFeedback.classList.remove('hidden');
+          
+          contactForm.reset();
+          
+          setTimeout(() => {
+            btnText.textContent = "Submit Inquiry";
+            btnIcon.setAttribute('data-lucide', 'send');
+            lucide.createIcons();
+            submitBtn.disabled = false;
+            formFeedback.classList.add('hidden');
+          }, 4000);
+        } else {
+          throw new Error(result.error || 'Failed to record message.');
+        }
+      } catch (err) {
+        console.error(err);
+        btnText.textContent = "Failure";
+        btnIcon.setAttribute('data-lucide', 'alert-circle');
+        lucide.createIcons();
+        submitBtn.disabled = false;
+        
+        formFeedback.textContent = err.message || 'Something went wrong. Please check connection.';
+        formFeedback.className = "text-sm font-semibold text-rose-400 block mt-2 sm:mt-0";
+        formFeedback.classList.remove('hidden');
+      }
+    });
+
+    // ----------------------------------------------------
+    // Pricing Plan Toggle Scripts
+    // ----------------------------------------------------
+    const studentPlans = [
+      {
+        price: "₹699",
+        badge: "Most Popular",
+        features: [
+          "1-page premium portfolio website",
+          "Responsive design & showcase",
+          "About, skills, projects, contact, resume",
+          "Modern premium animations",
+          "Live deployment",
+          "1 year hosting included",
+          "No source code ownership"
+        ]
+      },
+      {
+        price: "₹999",
+        badge: "",
+        features: [
+          "1-page premium portfolio website",
+          "Responsive design & showcase",
+          "About, skills, projects, contact, resume",
+          "Modern premium animations",
+          "Live deployment",
+          "2 years hosting included",
+          "No source code ownership"
+        ]
+      },
+      {
+        price: "₹1299",
+        badge: "",
+        features: [
+          "Full source code & project files",
+          "Comprehensive setup instructions",
+          "Modern premium animations",
+          "Local setup assistance",
+          "No hosting included"
+        ]
+      },
+      {
+        price: "₹1599",
+        badge: "",
+        features: [
+          "Full source code & project files",
+          "Deployment setup help",
+          "Full ownership transfer",
+          "Personal setup guidance & docs"
+        ]
+      }
+    ];
+
+    const profPlans = [
+      {
+        price: "₹1499",
+        badge: "Most Popular",
+        features: [
+          "Premium personal portfolio",
+          "Enhanced custom layouts",
+          "Responsive design & better animations",
+          "Live deployment",
+          "1 year hosting included",
+          "No source code ownership"
+        ]
+      },
+      {
+        price: "₹1999",
+        badge: "",
+        features: [
+          "Premium personal portfolio",
+          "Enhanced custom layouts",
+          "Responsive design & better animations",
+          "Live deployment",
+          "2 years hosting included",
+          "No source code ownership"
+        ]
+      },
+      {
+        price: "₹2499",
+        badge: "",
+        features: [
+          "Full source code & project files",
+          "Detailed deployment instructions",
+          "Advanced customized sections",
+          "No hosting included"
+        ]
+      },
+      {
+        price: "₹2999",
+        badge: "",
+        features: [
+          "Full source code & project files",
+          "Premium custom styling",
+          "Deployment setup help & docs",
+          "Complete ownership transfer"
+        ]
+      }
+    ];
+
+    window.setStudentPlan = function(idx) {
+      const plan = studentPlans[idx];
+      document.getElementById('student-price').textContent = plan.price;
+      const badge = document.getElementById('student-badge');
+      if (plan.badge) {
+        badge.textContent = plan.badge;
+        badge.style.display = 'inline-block';
+      } else {
+        badge.style.display = 'none';
+      }
+      
+      const featuresUl = document.getElementById('student-features');
+      featuresUl.innerHTML = '';
+      plan.features.forEach(feat => {
+        const li = document.createElement('li');
+        li.className = 'flex items-start gap-3 text-sm leading-relaxed text-foreground/90';
+        const isNegative = feat.toLowerCase().includes('no ');
+        const colorClass = isNegative ? 'text-rose-500/80' : 'text-[var(--neon-cyan)]';
+        li.innerHTML = `<i data-lucide="check" class="mt-0.5 h-4.5 w-4.5 shrink-0 ${colorClass}"></i> <span>${feat}</span>`;
+        featuresUl.appendChild(li);
+      });
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+
+      document.querySelectorAll('.plan-toggle-student').forEach((btn, i) => {
+        if (i === idx) {
+          btn.className = "plan-toggle-student py-2 px-1 rounded-lg transition-all text-center bg-[var(--neon-cyan)]/20 border border-[var(--neon-cyan)]/30 text-[var(--neon-cyan)] shadow-sm";
+        } else {
+          btn.className = "plan-toggle-student py-2 px-1 rounded-lg transition-all text-center text-muted-foreground hover:bg-white/5 hover:text-foreground border border-transparent";
+        }
+      });
+    };
+
+    window.setProfPlan = function(idx) {
+      const plan = profPlans[idx];
+      document.getElementById('prof-price').textContent = plan.price;
+      const badge = document.getElementById('prof-badge');
+      if (plan.badge) {
+        badge.textContent = plan.badge;
+        badge.style.display = 'inline-block';
+      } else {
+        badge.style.display = 'none';
+      }
+      
+      const featuresUl = document.getElementById('prof-features');
+      featuresUl.innerHTML = '';
+      plan.features.forEach(feat => {
+        const li = document.createElement('li');
+        li.className = 'flex items-start gap-3 text-sm leading-relaxed text-foreground/90';
+        const isNegative = feat.toLowerCase().includes('no ');
+        const colorClass = isNegative ? 'text-rose-500/80' : 'text-[var(--neon-blue)]';
+        li.innerHTML = `<i data-lucide="check" class="mt-0.5 h-4.5 w-4.5 shrink-0 ${colorClass}"></i> <span>${feat}</span>`;
+        featuresUl.appendChild(li);
+      });
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+
+      document.querySelectorAll('.plan-toggle-prof').forEach((btn, i) => {
+        if (i === idx) {
+          btn.className = "plan-toggle-prof py-2 px-1 rounded-lg transition-all text-center bg-[var(--neon-blue)]/20 border border-[var(--neon-blue)]/30 text-[var(--neon-blue)] shadow-sm";
+        } else {
+          btn.className = "plan-toggle-prof py-2 px-1 rounded-lg transition-all text-center text-muted-foreground hover:bg-white/5 hover:text-foreground border border-transparent";
+        }
+      });
+    };
+
+    // Initialize defaults on load
+    window.addEventListener('DOMContentLoaded', () => {
+      setStudentPlan(0);
+      setProfPlan(0);
+    });
+
+  </script>
+</body>
+</html>
