@@ -1,6 +1,6 @@
 # Akhil Palaparthi Portfolio — Full Source Bundle
 
-Generated: 2026-05-18T08:02:46Z
+Generated: 2026-05-18T09:28:22Z
 
 
 ================================================================
@@ -12,12 +12,9 @@ FILE: package.json
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
+    "dev": "vite",
     "build": "vite build",
-    "build:dev": "vite build --mode development",
-    "preview": "vite preview",
-    "lint": "eslint .",
-    "format": "prettier --write ."
+    "preview": "vite preview"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",
@@ -135,479 +132,81 @@ FILE: tsconfig.json
 ================================================================
 FILE: vite.config.ts
 ================================================================
-// @lovable.dev/vite-tanstack-config already includes the following — do NOT add them manually
-// or the app will break with duplicate plugins:
-//   - tanstackStart, viteReact, tailwindcss, tsConfigPaths, cloudflare (build-only),
-//     componentTagger (dev-only), VITE_* env injection, @ path alias, React/TanStack dedupe,
-//     error logger plugins, and sandbox detection (port/host/strictPort).
-// You can pass additional config via defineConfig({ vite: { ... } }) if needed.
-import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 
-// Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-// @cloudflare/vite-plugin builds from this — wrangler.jsonc main alone is insufficient.
 export default defineConfig({
-  tanstackStart: {
-    server: { entry: "server" },
+  plugins: [
+    TanStackRouterVite({
+      routesDirectory: "./src/routes",
+      generatedRouteTree: "./src/routeTree.gen.ts",
+    }),
+    react(),
+    tailwindcss(),
+    tsconfigPaths(),
+  ],
+  build: {
+    outDir: "dist",
   },
 });
 
 
 ================================================================
-FILE: manage.py
+FILE: vercel.json
 ================================================================
-#!/usr/bin/env python
-"""Django's command-line utility for administrative tasks."""
-import os
-import sys
-
-
-def main():
-    """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Business.settings')
-    try:
-        from django.core.management import execute_from_command_line
-    except ImportError as exc:
-        raise ImportError(
-            "Couldn't import Django. Are you sure it's installed and "
-            "available on your PYTHONPATH environment variable? Did you "
-            "forget to activate a virtual environment?"
-        ) from exc
-    execute_from_command_line(sys.argv)
-
-
-if __name__ == '__main__':
-    main()
-
-
-================================================================
-FILE: Business/__init__.py
-================================================================
-# Empty init file for Business package
-
-
-================================================================
-FILE: Business/asgi.py
-================================================================
-import os
-from django.core.asgi import get_asgi_application
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Business.settings')
-application = get_asgi_application()
-
-
-================================================================
-FILE: Business/settings.py
-================================================================
-import os
-from pathlib import Path
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-portfolio-project-secret-key'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['*']
-
-# Application definition
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'portfolio',  # Custom portfolio application
-]
-
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
-
-ROOT_URLCONF = 'Business.urls'
-
-TEMPLATES = [
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'Templates'],  # Custom Templates directory at root level
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
-
-WSGI_APPLICATION = 'Business.wsgi.application'
-
-# Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
+  ]
 }
 
-# Password validation
-# https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
 
-# Internationalization
-# https://docs.djangoproject.com/en/5.0/topics/i18n/
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
-USE_TZ = True
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.0/howto/static-files/
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / 'static' if (BASE_DIR / 'static').exists() else BASE_DIR
-]
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-LOGIN_URL = '/admin/login/'
-LOGIN_REDIRECT_URL = '/dashboard/'
-LOGOUT_REDIRECT_URL = '/'
+================================================================
+FILE: index.html
+================================================================
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akhil Palaparthi | Founder & Web Developer</title>
+  </head>
+  <body class="dark bg-background text-foreground">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
 
 
 ================================================================
-FILE: Business/urls.py
+FILE: src/main.tsx
 ================================================================
-from django.contrib import admin
-from django.urls import path, include
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { RouterProvider } from "@tanstack/react-router";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { getRouter } from "./router";
+import "./styles.css";
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('portfolio.urls')),
-]
+const router = getRouter();
+const queryClient = new QueryClient();
 
-
-================================================================
-FILE: Business/wsgi.py
-================================================================
-import os
-from django.core.wsgi import get_wsgi_application
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Business.settings')
-application = get_wsgi_application()
-
-
-================================================================
-FILE: portfolio/__init__.py
-================================================================
-# Empty init file for portfolio package
-
-
-================================================================
-FILE: portfolio/admin.py
-================================================================
-from django.contrib import admin
-from .models import ContactMessage
-
-@admin.register(ContactMessage)
-class ContactMessageAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'project_type', 'budget', 'created_at')
-    list_filter = ('project_type', 'budget', 'created_at')
-    search_fields = ('name', 'email', 'message')
-    readonly_fields = ('created_at',)
-
-
-================================================================
-FILE: portfolio/apps.py
-================================================================
-from django.apps import AppConfig
-
-class PortfolioConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'portfolio'
-
-
-================================================================
-FILE: portfolio/models.py
-================================================================
-from django.db import models
-
-class ContactMessage(models.Model):
-    name = models.CharField(max_length=255)
-    email = models.EmailField()
-    project_type = models.CharField(max_length=100)
-    budget = models.CharField(max_length=100)
-    message = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"{self.name} - {self.email} ({self.project_type})"
-
-
-================================================================
-FILE: portfolio/urls.py
-================================================================
-from django.urls import path
-from . import views
-
-app_name = 'portfolio'
-
-urlpatterns = [
-    path('', views.home_view, name='home'),
-    path('contact/', views.contact_view, name='contact'),
-    path('dashboard/', views.messages_dashboard_view, name='dashboard'),
-    path('dashboard/delete/<int:msg_id>/', views.delete_message_view, name='delete_message'),
-]
-
-
-================================================================
-FILE: portfolio/views.py
-================================================================
-import json
-from django.shortcuts import render
-from django.http import JsonResponse
-from django.contrib.admin.views.decorators import staff_member_required
-from django.views.decorators.http import require_POST
-from .models import ContactMessage
-
-def home_view(request):
-    return render(request, 'index.html')
-
-def contact_view(request):
-    if request.method == 'POST':
-        name = ''
-        email = ''
-        project_type = ''
-        budget = ''
-        message = ''
-        
-        # Check if the content type is JSON
-        if request.content_type == 'application/json':
-            try:
-                data = json.loads(request.body)
-                name = data.get('name', '').strip()
-                email = data.get('email', '').strip()
-                project_type = data.get('type', data.get('project_type', '')).strip()
-                budget = data.get('budget', '').strip()
-                message = data.get('message', '').strip()
-            except json.JSONDecodeError:
-                return JsonResponse({'success': False, 'error': 'Invalid JSON data'}, status=400)
-        else:
-            # Fallback to standard POST form data
-            name = request.POST.get('name', '').strip()
-            email = request.POST.get('email', '').strip()
-            project_type = request.POST.get('type', request.POST.get('project_type', '')).strip()
-            budget = request.POST.get('budget', '').strip()
-            message = request.POST.get('message', '').strip()
-            
-        # Basic validation
-        if not name or not email or not message:
-            return JsonResponse({'success': False, 'error': 'Name, email, and message are required.'}, status=400)
-            
-        try:
-            # Save the message
-            msg = ContactMessage.objects.create(
-                name=name,
-                email=email,
-                project_type=project_type,
-                budget=budget,
-                message=message
-            )
-            return JsonResponse({'success': True, 'message': 'Thank you! Your message has been received.'})
-        except Exception as e:
-            return JsonResponse({'success': False, 'error': f'Failed to save message: {str(e)}'}, status=500)
-            
-    return JsonResponse({'success': False, 'error': 'Method not allowed'}, status=405)
-
-@staff_member_required
-def messages_dashboard_view(request):
-    messages = ContactMessage.objects.all().order_by('-created_at')
-    total_count = messages.count()
-    
-    # Group by project type and calculate percentage
-    project_types = ['Portfolio Site', 'Personal Branding', 'Portfolio Redesign', 'Other']
-    project_stats = []
-    for p_type in project_types:
-        count = messages.filter(project_type=p_type).count()
-        percentage = int((count / total_count) * 100) if total_count > 0 else 0
-        project_stats.append({
-            'type': p_type,
-            'count': count,
-            'percentage': percentage
-        })
-        
-    # Group by budget ranges
-    budget_counts = {
-        'under_1000': messages.filter(budget='< ₹1,000').count(),
-        'mid_range': messages.filter(budget='₹1,000 – ₹2,500').count(),
-        'high_range': messages.filter(budget='₹2,500+').count(),
-        'other': messages.filter(budget='Other').count(),
-    }
-    
-    context = {
-        'messages': messages,
-        'total_count': total_count,
-        'project_stats': project_stats,
-        'budget_counts': budget_counts,
-    }
-    return render(request, 'messages_dashboard.html', context)
-
-@staff_member_required
-@require_POST
-def delete_message_view(request, msg_id):
-    try:
-        msg = ContactMessage.objects.get(id=msg_id)
-        msg.delete()
-        return JsonResponse({'success': True, 'message': 'Message deleted successfully.'})
-    except ContactMessage.DoesNotExist:
-        return JsonResponse({'success': False, 'error': 'Message not found.'}, status=404)
-    except Exception as e:
-        return JsonResponse({'success': False, 'error': str(e)}, status=500)
-
-
-================================================================
-FILE: src/server.ts
-================================================================
-import "./lib/error-capture";
-
-import { consumeLastCapturedError } from "./lib/error-capture";
-import { renderErrorPage } from "./lib/error-page";
-
-type ServerEntry = {
-  fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
-};
-
-let serverEntryPromise: Promise<ServerEntry> | undefined;
-
-async function getServerEntry(): Promise<ServerEntry> {
-  if (!serverEntryPromise) {
-    serverEntryPromise = import("@tanstack/react-start/server-entry").then(
-      (m) => ((m as { default?: ServerEntry }).default ?? (m as unknown as ServerEntry)),
-    );
-  }
-  return serverEntryPromise;
-}
-
-function brandedErrorResponse(): Response {
-  return new Response(renderErrorPage(), {
-    status: 500,
-    headers: { "content-type": "text/html; charset=utf-8" },
-  });
-}
-
-function isCatastrophicSsrErrorBody(body: string, responseStatus: number): boolean {
-  let payload: unknown;
-  try {
-    payload = JSON.parse(body);
-  } catch {
-    return false;
-  }
-
-  if (!payload || Array.isArray(payload) || typeof payload !== "object") {
-    return false;
-  }
-
-  const fields = payload as Record<string, unknown>;
-  const expectedKeys = new Set(["message", "status", "unhandled"]);
-  if (!Object.keys(fields).every((key) => expectedKeys.has(key))) {
-    return false;
-  }
-
-  return (
-    fields.unhandled === true &&
-    fields.message === "HTTPError" &&
-    (fields.status === undefined || fields.status === responseStatus)
-  );
-}
-
-// h3 swallows in-handler throws into a normal 500 Response with body
-// {"unhandled":true,"message":"HTTPError"} — try/catch alone never fires for those.
-async function normalizeCatastrophicSsrResponse(response: Response): Promise<Response> {
-  if (response.status < 500) return response;
-  const contentType = response.headers.get("content-type") ?? "";
-  if (!contentType.includes("application/json")) return response;
-
-  const body = await response.clone().text();
-  if (!isCatastrophicSsrErrorBody(body, response.status)) {
-    return response;
-  }
-
-  console.error(consumeLastCapturedError() ?? new Error(`h3 swallowed SSR error: ${body}`));
-  return brandedErrorResponse();
-}
-
-export default {
-  async fetch(request: Request, env: unknown, ctx: unknown) {
-    try {
-      const handler = await getServerEntry();
-      const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
-    } catch (error) {
-      console.error(error);
-      return brandedErrorResponse();
-    }
-  },
-};
-
-
-================================================================
-FILE: src/start.ts
-================================================================
-import { createStart, createMiddleware } from "@tanstack/react-start";
-
-import { renderErrorPage } from "./lib/error-page";
-
-const errorMiddleware = createMiddleware().server(async ({ next }) => {
-  try {
-    return await next();
-  } catch (error) {
-    if (error != null && typeof error === "object" && "statusCode" in error) {
-      throw error;
-    }
-    console.error(error);
-    return new Response(renderErrorPage(), {
-      status: 500,
-      headers: { "content-type": "text/html; charset=utf-8" },
-    });
-  }
-});
-
-export const startInstance = createStart(() => ({
-  requestMiddleware: [errorMiddleware],
-}));
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  </React.StrictMode>
+);
 
 
 ================================================================
@@ -693,16 +292,6 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
 
 
 ================================================================
@@ -989,11 +578,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
-  HeadContent,
-  Scripts,
 } from "@tanstack/react-router";
-
-import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
   return (
@@ -1053,49 +638,12 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Akhil Palaparthi | Founder & Web Developer" },
-      { name: "description", content: "Premium startup portfolio of Akhil Palaparthi — web developer and founder currently learning full stack development and building digital identities." },
-      { name: "author", content: "Akhil Palaparthi" },
-      { name: "theme-color", content: "#0a0a14" },
-      { property: "og:title", content: "Akhil Palaparthi | Founder & Web Developer" },
-      { property: "og:description", content: "Building premium digital identities today. Growing into digital product development tomorrow." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
-    ],
-    links: [
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" },
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-    ],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
 
-function RootShell({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
+
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
@@ -2974,7 +2522,359 @@ export function Vision() {
 
 
 ================================================================
-FILE: Templates/index.html
+FILE: backend/manage.py
+================================================================
+#!/usr/bin/env python
+"""Django's command-line utility for administrative tasks."""
+import os
+import sys
+
+
+def main():
+    """Run administrative tasks."""
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Business.settings')
+    try:
+        from django.core.management import execute_from_command_line
+    except ImportError as exc:
+        raise ImportError(
+            "Couldn't import Django. Are you sure it's installed and "
+            "available on your PYTHONPATH environment variable? Did you "
+            "forget to activate a virtual environment?"
+        ) from exc
+    execute_from_command_line(sys.argv)
+
+
+if __name__ == '__main__':
+    main()
+
+
+================================================================
+FILE: backend/requirements.txt
+================================================================
+django>=5.0.0
+
+
+================================================================
+FILE: backend/Business/__init__.py
+================================================================
+# Empty init file for Business package
+
+
+================================================================
+FILE: backend/Business/asgi.py
+================================================================
+import os
+from django.core.asgi import get_asgi_application
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Business.settings')
+application = get_asgi_application()
+
+
+================================================================
+FILE: backend/Business/settings.py
+================================================================
+import os
+from pathlib import Path
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'django-insecure-portfolio-project-secret-key'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = ['*']
+
+# Application definition
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'portfolio',  # Custom portfolio application
+]
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+ROOT_URLCONF = 'Business.urls'
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / 'Templates'],  # Custom Templates directory at root level
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+WSGI_APPLICATION = 'Business.wsgi.application'
+
+# Database
+# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+# Password validation
+# https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+]
+
+# Internationalization
+# https://docs.djangoproject.com/en/5.0/topics/i18n/
+LANGUAGE_CODE = 'en-us'
+
+TIME_ZONE = 'UTC'
+
+USE_I18N = True
+
+USE_TZ = True
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/5.0/howto/static-files/
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static' if (BASE_DIR / 'static').exists() else BASE_DIR
+]
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = '/admin/login/'
+LOGIN_REDIRECT_URL = '/dashboard/'
+LOGOUT_REDIRECT_URL = '/'
+
+
+================================================================
+FILE: backend/Business/urls.py
+================================================================
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('portfolio.urls')),
+]
+
+
+================================================================
+FILE: backend/Business/wsgi.py
+================================================================
+import os
+from django.core.wsgi import get_wsgi_application
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Business.settings')
+application = get_wsgi_application()
+
+
+================================================================
+FILE: backend/portfolio/__init__.py
+================================================================
+# Empty init file for portfolio package
+
+
+================================================================
+FILE: backend/portfolio/admin.py
+================================================================
+from django.contrib import admin
+from .models import ContactMessage
+
+@admin.register(ContactMessage)
+class ContactMessageAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'project_type', 'budget', 'created_at')
+    list_filter = ('project_type', 'budget', 'created_at')
+    search_fields = ('name', 'email', 'message')
+    readonly_fields = ('created_at',)
+
+
+================================================================
+FILE: backend/portfolio/apps.py
+================================================================
+from django.apps import AppConfig
+
+class PortfolioConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'portfolio'
+
+
+================================================================
+FILE: backend/portfolio/models.py
+================================================================
+from django.db import models
+
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    project_type = models.CharField(max_length=100)
+    budget = models.CharField(max_length=100)
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.email} ({self.project_type})"
+
+
+================================================================
+FILE: backend/portfolio/urls.py
+================================================================
+from django.urls import path
+from . import views
+
+app_name = 'portfolio'
+
+urlpatterns = [
+    path('', views.home_view, name='home'),
+    path('contact/', views.contact_view, name='contact'),
+    path('dashboard/', views.messages_dashboard_view, name='dashboard'),
+    path('dashboard/delete/<int:msg_id>/', views.delete_message_view, name='delete_message'),
+]
+
+
+================================================================
+FILE: backend/portfolio/views.py
+================================================================
+import json
+from django.shortcuts import render
+from django.http import JsonResponse
+from django.contrib.admin.views.decorators import staff_member_required
+from django.views.decorators.http import require_POST
+from .models import ContactMessage
+
+def home_view(request):
+    return render(request, 'index.html')
+
+def contact_view(request):
+    if request.method == 'POST':
+        name = ''
+        email = ''
+        project_type = ''
+        budget = ''
+        message = ''
+        
+        # Check if the content type is JSON
+        if request.content_type == 'application/json':
+            try:
+                data = json.loads(request.body)
+                name = data.get('name', '').strip()
+                email = data.get('email', '').strip()
+                project_type = data.get('type', data.get('project_type', '')).strip()
+                budget = data.get('budget', '').strip()
+                message = data.get('message', '').strip()
+            except json.JSONDecodeError:
+                return JsonResponse({'success': False, 'error': 'Invalid JSON data'}, status=400)
+        else:
+            # Fallback to standard POST form data
+            name = request.POST.get('name', '').strip()
+            email = request.POST.get('email', '').strip()
+            project_type = request.POST.get('type', request.POST.get('project_type', '')).strip()
+            budget = request.POST.get('budget', '').strip()
+            message = request.POST.get('message', '').strip()
+            
+        # Basic validation
+        if not name or not email or not message:
+            return JsonResponse({'success': False, 'error': 'Name, email, and message are required.'}, status=400)
+            
+        try:
+            # Save the message
+            msg = ContactMessage.objects.create(
+                name=name,
+                email=email,
+                project_type=project_type,
+                budget=budget,
+                message=message
+            )
+            return JsonResponse({'success': True, 'message': 'Thank you! Your message has been received.'})
+        except Exception as e:
+            return JsonResponse({'success': False, 'error': f'Failed to save message: {str(e)}'}, status=500)
+            
+    return JsonResponse({'success': False, 'error': 'Method not allowed'}, status=405)
+
+@staff_member_required
+def messages_dashboard_view(request):
+    messages = ContactMessage.objects.all().order_by('-created_at')
+    total_count = messages.count()
+    
+    # Group by project type and calculate percentage
+    project_types = ['Portfolio Site', 'Personal Branding', 'Portfolio Redesign', 'Other']
+    project_stats = []
+    for p_type in project_types:
+        count = messages.filter(project_type=p_type).count()
+        percentage = int((count / total_count) * 100) if total_count > 0 else 0
+        project_stats.append({
+            'type': p_type,
+            'count': count,
+            'percentage': percentage
+        })
+        
+    # Group by budget ranges
+    budget_counts = {
+        'under_1000': messages.filter(budget='< ₹1,000').count(),
+        'mid_range': messages.filter(budget='₹1,000 – ₹2,500').count(),
+        'high_range': messages.filter(budget='₹2,500+').count(),
+        'other': messages.filter(budget='Other').count(),
+    }
+    
+    context = {
+        'messages': messages,
+        'total_count': total_count,
+        'project_stats': project_stats,
+        'budget_counts': budget_counts,
+    }
+    return render(request, 'messages_dashboard.html', context)
+
+@staff_member_required
+@require_POST
+def delete_message_view(request, msg_id):
+    try:
+        msg = ContactMessage.objects.get(id=msg_id)
+        msg.delete()
+        return JsonResponse({'success': True, 'message': 'Message deleted successfully.'})
+    except ContactMessage.DoesNotExist:
+        return JsonResponse({'success': False, 'error': 'Message not found.'}, status=404)
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)
+
+
+================================================================
+FILE: backend/Templates/index.html
 ================================================================
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
@@ -5411,7 +5311,7 @@ FILE: Templates/index.html
 </html>
 
 ================================================================
-FILE: Templates/messages_dashboard.html
+FILE: backend/Templates/messages_dashboard.html
 ================================================================
 <!DOCTYPE html>
 <html lang="en">
