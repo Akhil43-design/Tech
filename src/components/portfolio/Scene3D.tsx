@@ -38,13 +38,13 @@ function Rings({ isMobile }: { isMobile: boolean }) {
   return (
     <group ref={g}>
       <Torus args={[2.4, 0.012, 8, radialSegments]}>
-        <meshStandardMaterial color="#22d3ee" emissive="#22d3ee" emissiveIntensity={isMobile ? 0.5 : 0.9} toneMapped={false} />
+        <meshStandardMaterial color="#22d3ee" emissive="#22d3ee" emissiveIntensity={isMobile ? 0.6 : 1.2} toneMapped={false} />
       </Torus>
       <Torus args={[2.9, 0.008, 8, radialSegments]} rotation={[Math.PI / 3, 0, 0]}>
-        <meshStandardMaterial color="#a855f7" emissive="#a855f7" emissiveIntensity={isMobile ? 0.5 : 0.85} toneMapped={false} />
+        <meshStandardMaterial color="#a855f7" emissive="#a855f7" emissiveIntensity={isMobile ? 0.6 : 1.1} toneMapped={false} />
       </Torus>
       <Torus args={[3.4, 0.006, 8, radialSegments]} rotation={[Math.PI / 1.6, Math.PI / 4, 0]}>
-        <meshStandardMaterial color="#3b82f6" emissive="#3b82f6" emissiveIntensity={isMobile ? 0.4 : 0.8} toneMapped={false} />
+        <meshStandardMaterial color="#3b82f6" emissive="#3b82f6" emissiveIntensity={isMobile ? 0.5 : 1} toneMapped={false} />
       </Torus>
     </group>
   );
@@ -93,7 +93,7 @@ export function Scene3D() {
   return (
     <Canvas
       dpr={[1, isMobile ? 1.2 : 1.5]}
-      camera={{ position: [-1.5, 0, 6], fov: 50 }}
+      camera={{ position: [0, 0, 6], fov: 50 }}
       gl={{ antialias: !isMobile, alpha: true, powerPreference: "high-performance" }}
       frameloop={isMobile ? "demand" : "always"}
     >
